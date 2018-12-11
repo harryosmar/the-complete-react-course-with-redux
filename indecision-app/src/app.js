@@ -2,15 +2,22 @@ console.log('app is running');
 
 var user = {
     'name' : 'Mokmok',
-    'age' : 100,
-    'location' : 'earth'
+    'age' : 15,
+    // 'location' : 'earth'
 };
+
+
+function getLocation(location) {
+    if (location) {
+        return <p>live at {location}</p>;
+    }
+}
 
 var element = (
     <div>
-        <h1>{user.name.toUpperCase()}</h1>
-        <p>{user.age} years old</p>
-        <p>live at {user.location}</p>
+        <h1>{user.name ? user.name.toUpperCase() : 'anonymous'}</h1>
+        {user.age >= 17 && <p>{user.age} years old</p>}
+        {getLocation(user.location)}
     </div>
 );
 
