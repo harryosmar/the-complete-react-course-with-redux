@@ -7,7 +7,7 @@
 
 ### JSX Expression
 
-- `JSX expression` can only have 1 root element, the best pratice wrap inside `<div>` tag
+- `JSX expression` can only have 1 root element, the best pratice is to wrap all elements inside `<div>` tag
 ```
 let template = (
     <div>
