@@ -96,3 +96,25 @@ console.log(constName); // error access, out of `if statement scope`
 Tips :
 > Better use `const` variable at the first, then change it to `let` if the variable need re-assign.
 
+### Arrow Function es6
+
+- Arrow function is `anonymous`
+```
+// es5 example function with name `getFirstName` 
+function getFirstName(fullname) {
+    return fullname.split(' ')[0];
+}
+
+// still es5 example function `anonymous`, instead we stored this function to variable name `getFirstName`
+var getFirstName = function getFirstName(fullname) {
+    return fullname.split(' ')[0];
+}
+
+// es6 example function, remove the `function keyword`
+const getFirstName = (fullname) => {
+    return fullname.split(' ')[0];
+}
+
+// es6 example function, can make to even simpler format as 1 line script, remove `return keyword`.
+const getFirstName = (fullname) => fullname.split(' ')[0];
+```
