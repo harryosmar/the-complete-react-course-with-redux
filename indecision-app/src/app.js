@@ -1,6 +1,6 @@
 console.log('app is running');
 
-var user = {
+const user = {
     'name' : 'Mokmok',
     'age' : 15,
     // 'location' : 'earth'
@@ -13,7 +13,7 @@ function getLocation(location) {
     }
 }
 
-var element = (
+const element = (
     <div>
         <h1>{user.name ? user.name.toUpperCase() : 'anonymous'}</h1>
         {user.age >= 17 && <p>{user.age} years old</p>}
@@ -21,6 +21,6 @@ var element = (
     </div>
 );
 
-var placeholder = document.getElementById('placedhere');
+const placeholder = document.getElementById('placedhere');
 
 ReactDOM.render(element, placeholder);
