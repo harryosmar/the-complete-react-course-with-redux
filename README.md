@@ -3,6 +3,15 @@
 ## Links
 * [indecision-app](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/indecision-app)
 * [NOTE](#note)
+  * [JSX Expression](#jsx-expression)
+  * [Conditional Rendering in JSX](#conditional-rendering-in-jsx)
+  * [Const and Let](#const-and-let)
+    * [Re-define](#re-define)
+    * [Re-assign](#re-assign)
+    * [Function Scope](#function-ccope)
+    * [Block Scope](#block-scope)
+  * [Arrow Function es6](#arrow-function-es6)
+  * [Arrow Function es6](#arrow-function-es6)
 
 ## NOTE 
 
@@ -91,15 +100,13 @@ console.log(letName); // error access, out of `if statement scope`
 console.log(constName); // error access, out of `if statement scope`
 ```
 
-
-
-
 Tips :
 > Better use `const` variable at the first, then change it to `let` if the variable need re-assign.
 
+
 ### Arrow Function es6
 
-- Arrow function is `anonymous`
+#### Arrow function is `anonymous`
 ```
 // es5 example function with name `getFirstName` 
 function getFirstName(fullname) {
@@ -120,7 +127,7 @@ const getFirstName = (fullname) => {
 const getFirstName = (fullname) => fullname.split(' ')[0];
 ```
 
-- `arguments object` no longer bound with arrow functions
+#### `arguments object` no longer bound with arrow functions
 
 In es5 we can access `arguments` object
 ```
@@ -132,7 +139,7 @@ const greet = (name) => {
 console.log(greet('patrik', 'spongebob')); // echo Hello patrik
 ```
 
-In es6 we can't access `arguments` object
+#### In es6 we can't access `arguments` object
 ```
 const greet = (name) => {
     console.log(arguments); // Uncaught ReferenceError: arguments is not defined
@@ -140,7 +147,7 @@ const greet = (name) => {
 }}
 ```
 
-- `this` keyword no longer bound
+#### `this` keyword no longer bound
 > use `this` from the code that `containing` the arrow function
 ```
 const multiplier = {
