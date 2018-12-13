@@ -15,6 +15,7 @@
     * [arguments object no longer bound with arrow functions](#arguments-object-no-longer-bound-with-arrow-functions)
     * [can't access arguments object](#cant-access-arguments-object)
     * [this keyword no longer bound](#this-keyword-no-longer-bound)
+* [Other Links](#other-links)
 
 ## NOTE 
 
@@ -177,3 +178,6 @@ const multiplier = {
     multiply() {}
 }
 ```
+
+## Other Links
+- https://reactjs.org/docs/dom-elements.html
