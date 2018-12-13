@@ -145,7 +145,7 @@ const greet = (name) => {
 const multiplier = {
     numbers: [1,2,3,4,5],
     multiplyBy: 3,
-    function : multiply() {
+    multiply() {
         // lexical `this` refer to object `multiplier` even inside the `map` function which is used arrow function, `this` not bound to arrow function.
         return this.numbers.map((number) => number * this.multiplyBy);
     }
