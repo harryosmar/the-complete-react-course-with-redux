@@ -13,7 +13,7 @@
   * [Arrow Function es6](#arrow-function-es6)
     * [Arrow function is anonymous](#arrow-function-is-anonymous)
     * [arguments object no longer bound with arrow functions](#arguments-object-no-longer-bound-with-arrow-functions)
-    * [In es6 we can't access arguments object](#in-es6-we-cant-access-arguments-object)
+    * [can't access arguments object](#cant-access-arguments-object)
     * [this keyword no longer bound](#this-keyword-no-longer-bound)
 
 ## NOTE 
@@ -142,7 +142,7 @@ const greet = (name) => {
 console.log(greet('patrik', 'spongebob')); // echo Hello patrik
 ```
 
-#### In es6 we can't access `arguments` object
+#### Can't access `arguments` object
 ```
 const greet = (name) => {
     console.log(arguments); // Uncaught ReferenceError: arguments is not defined
