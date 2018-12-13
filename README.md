@@ -151,7 +151,7 @@ const greet = (name) => {
 ```
 
 #### `this` keyword no longer bound
-> use `this` from the code that `containing` the arrow function
+> Lexical Scoping just means that it uses `this` from the code that *contains the Arrow Function*.
 ```
 const multiplier = {
     numbers: [1,2,3,4,5],
