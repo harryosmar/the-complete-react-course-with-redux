@@ -105,7 +105,7 @@ function getFirstName(fullname) {
     return fullname.split(' ')[0];
 }
 
-// still es5 example function `anonymous`, instead we stored this function to variable name `getFirstName`
+// still es5 example function `anonymous`, instead we stored this function to variable `getFirstName`
 var getFirstName = function getFirstName(fullname) {
     return fullname.split(' ')[0];
 }
@@ -117,4 +117,52 @@ const getFirstName = (fullname) => {
 
 // es6 example function, can make to even simpler format as 1 line script, remove `return keyword`.
 const getFirstName = (fullname) => fullname.split(' ')[0];
+```
+
+- `arguments object` no longer bound with arrow functions
+
+In es5 we can access `arguments` object
+```
+const greet = (name) => {
+    console.log(arguments); // arguments object : arguments[0] 'patrik', arguments[1] 'spongebob'
+    return `Hello ${name}`;
+}
+
+console.log(greet('patrik', 'spongebob')); // echo Hello patrik
+```
+
+In es6 we can't access `arguments` object
+```
+const greet = (name) => {
+    console.log(arguments); // Uncaught ReferenceError: arguments is not defined
+    return `Hello ${name}`;
+}}
+```
+
+- `this` keyword no longer bound
+> use `this` from the code that `containing` the arrow function
+```
+const multiplier = {
+    numbers: [1,2,3,4,5],
+    multiplyBy: 3,
+    function : multiply() {
+        // lexical `this` refer to object `multiplier` even inside the `map` function which is used arrow function, `this` not bound to arrow function.
+        return this.numbers.map((number) => number * this.multiplyBy);
+    }
+};
+
+console.log(multiplier.multiply());
+```
+
+Note : multiply is not arrow function
+```
+const multiplier = {
+    function : multiply() {}
+}
+
+// equal to
+
+const multiplier = {
+    multiply() {}
+}
 ```
