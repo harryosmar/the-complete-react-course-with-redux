@@ -165,7 +165,7 @@ const multiplier = {
 console.log(multiplier.multiply());
 ```
 
-Note : multiply is not arrow function
+Tips : in object `multiplier`, see that `multiply` function without `function` keyword. 
 ```
 const multiplier = {
     function : multiply() {}
