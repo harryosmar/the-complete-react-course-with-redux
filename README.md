@@ -1,7 +1,8 @@
 # the-complete-react-course-with-redux
 
 ## Links
-- [indecision-app](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/indecision-app)
+* [indecision-app](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/indecision-app)
+* [NOTE](#note)
 
 ## NOTE 
 
