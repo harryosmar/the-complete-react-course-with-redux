@@ -23,6 +23,12 @@ const removeAll = () => {
     renderApp();
 };
 
+const onMakeDecision = () => {
+    const randomOptionIndex = Math.floor(Math.random() * app.options.length);
+    const selectedOption = app.options[randomOptionIndex];
+    alert(`Here is what you should do : ${selectedOption}`);
+};
+
 const placeholder = document.getElementById('placedhere');
 
 const renderApp = () => {
@@ -31,7 +37,7 @@ const renderApp = () => {
             <h1>{app.title}</h1>
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-            <p>{app.options.length}</p>
+            <button onClick={onMakeDecision}>What should I do?</button>
             <button onClick={removeAll}>Remove All</button>
             <ol>
                 {app.options.map((option,index) => <li key={index}>{option}</li>)}
