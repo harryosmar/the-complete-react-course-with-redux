@@ -179,5 +179,50 @@ const multiplier = {
 }
 ```
 
+### Manual Binding
+> `JSX` does not have built in data binding
+```
+let count = 0;
+
+const addOne = () => {
+    count++;
+    console.log('add one', count);
+};
+
+// when  button clicked count in `h1` element does not changed
+const template2 = (
+    <div>
+        <h1>Count:{count}</h1>
+        <button onClick={addOne}>+1</button>
+    </div>
+);
+
+ReactDOM.render(template2, placeholder);
+```
+
+How to make the count changed, by manual binding
+```
+let count = 0;
+
+const addOne = () => {
+    count++;
+    console.log('add one', count);
+    renderCounterApp(); // call this to update the DOM
+};
+
+const renderCounterApp = () => {
+    const template2 = (
+        <div>
+            <h1>Count:{count}</h1>
+            <button onClick={addOne}>+1</button>
+        </div>
+    );
+
+    ReactDOM.render(template2, placeholder);
+}
+
+renderCounterApp(); // first render count equal to `0`
+```
+
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
