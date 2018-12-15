@@ -227,3 +227,4 @@ renderCounterApp(); // first render count equal to `0`
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
+- https://reactjs.org/docs/events.html#form-events
