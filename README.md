@@ -15,6 +15,7 @@
     * [arguments object no longer bound with arrow functions](#arguments-object-no-longer-bound-with-arrow-functions)
     * [can't access arguments object](#cant-access-arguments-object)
     * [this keyword no longer bound](#this-keyword-no-longer-bound)
+    * [Manual Binding](#manual-binding)
 * [Other Links](#other-links)
 
 ## NOTE 
