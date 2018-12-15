@@ -16,9 +16,10 @@
     * [can't access arguments object](#cant-access-arguments-object)
     * [this keyword no longer bound](#this-keyword-no-longer-bound)
     * [Manual Binding](#manual-binding)
+    * [Array in JSX](#array-in-jsx)
 * [Other Links](#other-links)
 
-## NOTE 
+## NOTE
 
 ### JSX Expression
 
@@ -31,7 +32,9 @@ let template = (
     </div>
 );
 ```
-> `JSX expression` would not render `boolean`, `undefined` and `null` value.
+> `JSX expression` would ignore/not render `boolean`, `undefined` and `null` value.
+> But `JSX` support others literal value `string`, `number` and even supports `array`
+> `JSX` can render `JSX`, nested `JSX`
 
 ### Conditional Rendering in JSX
 
@@ -223,6 +226,16 @@ const renderCounterApp = () => {
 }
 
 renderCounterApp(); // first render count equal to `0`
+```
+
+### Array in JSX
+```
+const options = ['item1', 'item2'];
+const optionsTemplate = (
+    <ol>
+        {options.map((option, index) => <li key={index}>option</li>)}
+    </ol>
+); // <ol><li>option</li><li>option</li></ol>
 ```
 
 ## Other Links
