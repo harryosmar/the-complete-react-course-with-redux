@@ -233,9 +233,9 @@ renderCounterApp(); // first render count equal to `0`
 const options = ['item1', 'item2'];
 const optionsTemplate = (
     <ol>
-        {options.map((option, index) => <li key={index}>option</li>)}
+        {options.map((option, index) => <li key={index}>{option}</li>)}
     </ol>
-); // <ol><li>option</li><li>option</li></ol>
+); // <ol><li>item1</li><li>item2</li></ol>
 ```
 
 ## Other Links
