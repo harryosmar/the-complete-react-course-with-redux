@@ -230,7 +230,9 @@ renderCounterApp(); // first render count equal to `0`
 
 ### Array in JSX
 ```
-const options = ['item1', 'item2'];
+const options = [];
+// use spread syntax to push new item to options array
+options = [...options, 'item1', 'item2'];
 const optionsTemplate = (
     <ol>
         {options.map((option, index) => <li key={index}>{option}</li>)}
