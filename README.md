@@ -55,7 +55,7 @@ The difference between `var`, `const`, `let`
 | ------------- | ------------- | ------------- | ------------- |
 | Function Scope  | Y  | Y  | Y  |
 | Block Scope  | N  | Y  | Y  |
-| Re-assign  | Y  | Y  | N  |
+| Re-assign  | Y  | N  | Y  |
 | Re-define/Re-declare  | Y  | N  | N  |
 
 #### Re-define
