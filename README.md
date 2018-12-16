@@ -279,7 +279,7 @@ ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id
 ```
 
 #### React Component Props
-We can pass data to react component class, using `props` attribute. `props` is an object which has key-value pair for each index. `props` values can be an `object`, `array`, `literal value : string, int`, or event a `function`.
+We can pass data to react component class, using `props` attribute. `props` is an object which has key-value pair for each index. `props` values can be an `object`, `array`, `literal value : string, int`, or even a `function`.
 
 > `props` is immutable.
 
