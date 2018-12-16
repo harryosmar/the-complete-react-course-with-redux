@@ -255,7 +255,7 @@ class Header extends React.Component {
     }
 }
 ```
-How to use that that `Header` component
+How to use that `Header` component
 ```
 const jsxTemplate = (
     <div>
