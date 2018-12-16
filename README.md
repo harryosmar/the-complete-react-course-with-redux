@@ -25,6 +25,7 @@
     * [React Component State](#react-component-state)
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
+    * [stateless function component](#stateless-function-component)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -252,7 +253,7 @@ const optionsTemplate = (
 ```
 
 ### React Component
-> react component is a `es6 class` that extends `React.Component` class, and define `render` method.
+> react component is a `es6 class` or [`stateless function component`](#stateless-function-component) that extends `React.Component` class, and define `render` method.
 ```
 class Header extends React.Component {
     render() {
@@ -490,6 +491,23 @@ class Counter extends React.Component {
 
 #### prop VS state
 ![prop VS state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/prop-vs-state.jpg)
+
+#### Stateless Function Component
+Simple react component in form of function, but does not have any state/stateless. Usefull for react component which only need to render, without has any logic related to `state`.
+But this stateless function still can have `props`.
+```
+const User = (props) => {
+    return (
+        <div>
+            <p>name: {props.name}</p>
+            <p>age: {props.age}</p>
+        </div>
+    );
+}
+
+ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('container')); //<div id="container"><div><p>name: Spongebob</p><p>age: 17</p></div></div>
+```
+
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
