@@ -237,7 +237,8 @@ const renderCounterApp = () => {
     ReactDOM.render(template2, placeholder);
 }
 
-renderCounterApp(); // first render count equal to `0`
+// first render count equal to `0`
+renderCounterApp();
 ```
 
 ### Array in JSX
@@ -249,7 +250,8 @@ const optionsTemplate = (
     <ol>
         {options.map((option, index) => <li key={index}>{option}</li>)}
     </ol>
-); // <ol><li>item1</li><li>item2</li></ol>
+);
+// <ol><li>item1</li><li>item2</li></ol>
 ```
 
 ### React Component
@@ -308,7 +310,8 @@ class SubHeader extends React.Component {
     }
 }
 
-ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>This is the Sub Header text</h2></div></div>
+ReactDOM.render(<Header />, document.getElementById('container-id'));
+// <div id="container-id"><div><h1>Header</h1><h2>This is the Sub Header text</h2></div></div>
 ```
 > `key` keyword can not be used as the `prop` name. Because React used it as identifier for unique childs elements. To avoid this warning `Warning: Each child in an array or iterator should have a unique "key" prop.`
 
