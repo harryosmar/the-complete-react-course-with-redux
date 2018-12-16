@@ -279,7 +279,10 @@ ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id
 ```
 
 #### React Component Props
-We can pass data to react component class, using `props` attribute. `props` is an object which has key-value pair for each index.
+We can pass data to react component class, using `props` attribute. `props` is an object which has key-value pair for each index. `props` values can be an `object`, `array`, `literal value : string, int`, or event a `function`.
+
+> `props` is immutable.
+
 ```
 // How to pass the data to `props` attribute
 class Header extends React.Component {
@@ -331,6 +334,34 @@ class Option extends React.Component {
     }
 }
 ```
+
+> Because props can use `function` as a value, for nested React Component, *the child can communicate with the parent component function*, if that function pass as the prop attribute.
+```
+class ParentComponent extends React.Component {
+    parentFunction() {
+        alert();
+    }
+
+    render() {
+        return (
+            <div>
+                <ChildComponent parentFunction={this.parentFunction}/>
+            </div>
+        );
+    }
+}
+
+class ChildComponent extends React.Component {
+    render() {
+        return (
+            <div>
+                <button onClick={this.props.parentFunction}>Click Here</button>
+            </div>
+        );
+    }
+}
+```
+
 
 #### Loose `this` binding
 
