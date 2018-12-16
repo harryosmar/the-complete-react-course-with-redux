@@ -19,6 +19,7 @@
   * [Array in JSX](#array-in-jsx)
   * [React Component](#react-component)
     * [Component Props](#react-component-props)
+      * [Default Props](#default-props)
     * [Loose `this` binding](#loose-this-binding)
       * [Example with simple object](example-with-simple-object)
       * [Example with react component](example-with-react-component)
@@ -365,6 +366,35 @@ class ChildComponent extends React.Component {
         );
     }
 }
+```
+
+##### Default Props
+React component can has `defaultProps`. It's usefull to set default value for `rendering` or `state`.
+```
+class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: props.count
+        };
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Count:{this.state.count}</h1>
+            </div>
+        );
+    }
+}
+
+Counter.defaultProps = {
+    count: 0
+}
+
+ReactDOM.render(<Counter count={10}/>, document.getElementById('#container'));
+// <div id="container"><div><h1>10</h1></div></div>
+// With defaultProps we can set the state `count` dynamically.
 ```
 
 

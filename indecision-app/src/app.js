@@ -2,7 +2,7 @@ class IndecisionApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            options: []
+            options: props.options
         }
         this.handleRemoveAll = this.handleRemoveAll.bind(this);
         this.addOption = this.addOption.bind(this);
@@ -37,12 +37,10 @@ class IndecisionApp extends React.Component {
     }
 
     render() {
-        const title = 'Indecision App';
         const subtitle = 'Put your live in the hands of computer';
-
         return (
             <div>
-                <Header title={title} subtitle={subtitle} />
+                <Header subtitle={subtitle} />
                 <Action handlePick={this.handlePick} isDisabled={!this.state.options.length}/>
                 <Options handleRemoveAll={this.handleRemoveAll} options={this.state.options} />
                 <AddOption addOption={this.addOption}/>
@@ -55,9 +53,13 @@ const Header = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     );
+};
+
+Header.defaultProps = {
+    title: 'Indecision App'
 };
 
 const Action = (props) => {
@@ -119,6 +121,10 @@ class AddOption extends React.Component {
             </div>
         );
     }
+}
+
+IndecisionApp.defaultProps = {
+    options: []
 }
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('placedhere'));
