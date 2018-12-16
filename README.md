@@ -22,6 +22,7 @@
     * [Loose `this` binding](#loose-this-binding)
       * [Example with simple object](example-with-simple-object)
       * [Example with react component](example-with-react-component)
+    * [React Component State](#react-component-state)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -191,7 +192,8 @@ const multiplier = {
 ```
 
 ### Manual Binding
-> `JSX` does not have built in data binding
+> `JSX` does not have built in data binding.
+But React has [React Component State](#react-component-state) to handled this matter.
 ```
 let count = 0;
 
@@ -377,6 +379,9 @@ class Options extends React.Component {
     }
 }
 ```
+
+#### React Component State
+![react component state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/react-component-state.jpg)
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
