@@ -19,6 +19,9 @@
   * [Array in JSX](#array-in-jsx)
   * [React Component](#react-component)
     * [Component Props](#react-component-props)
+    * [Loose `this` binding](#loose-this-binding)
+      * [Example with simple object](example-with-simple-object)
+      * [Example with react component](example-with-react-component)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -321,6 +324,55 @@ class Option extends React.Component {
         return (
             console.log(this.props); // {options: 'item1'}, there is no `key` index name in props object.
             <li>{this.props.option}</li>
+        );
+    }
+}
+```
+
+#### Loose `this` binding
+
+##### Example with simple object
+
+There is a case when we trying to access `this` but get error access of `undefined` or `null`. Because We trying to access `this` out of scope. That's why we need to manually `bind` the `this`.
+```
+const Person = {
+    name: 'Spongebob',
+    getName: function() {
+        return this.name;
+    }
+};
+
+console.log(Person.getName());
+const getName = Person.getName;
+console.log(getName()); // Uncaught TypeError: Cannot read property 'name' of undefined
+
+const getNameWithBind = Person.getName.bind(Person);
+console.log(getNameWithBind()); // Spongebob
+
+// or we can even set the binding to another object
+const getNameWithBind2 = Person.getName.bind({name: 'Patrick'});
+console.log(getNameWithBind()); // Patrick
+```
+
+##### Example with react component
+
+The same case happened for React Component class. When we try to access `this` from another function beside `render`.
+```
+class Options extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleRemoveAll = this.handleRemoveAll.bind(this); // binding `this` to method handleRemoveAll.
+    }
+
+    handleRemoveAll() {
+        console.log(this.props); // So we can access `this.props` object attribute
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.handleRemoveAll}>Remove All</button>
+            </div>
         );
     }
 }
