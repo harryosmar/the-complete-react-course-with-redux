@@ -269,6 +269,60 @@ How to use that `Header` component
 ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>Sub Header</h2></div></div>
 ```
 
+#### React Component Props
+We can pass data to react component class, using `props` attribute. `props` is an object which has key-value pair for each index.
+```
+// How to pass the data to `props` attribute
+class Header extends React.Component {
+    render() {
+        const subheader = 'This is the Sub Header text';
+        return (
+            <div>
+                <h1>Header</h1>
+                <SubHeader subheader={subheader}/>
+            </div>
+        );
+    }
+}
+
+// How to retrieve the data from `props` attribute
+class SubHeader extends React.Component {
+    render() {
+        return (
+            <h2>{this.props.subheader}</h2>
+        );
+    }
+}
+
+ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>This is the Sub Header text</h2></div></div>
+```
+> `key` keyword can not be used in as the `prop` name. Because React used it as identifier for unique childs elements. To avoid this warning `Warning: Each child in an array or iterator should have a unique "key" prop.`
+
+```
+class Options extends React.Component {
+    render() {
+        return (
+            const options = ['item1'];
+            <div>
+                <p>Here are your options</p>
+                <ol>
+                    {options.length && options.map((option, index) => <Option key={index} option={option}/>)}
+                </ol>
+            </div>
+        );
+    }
+}
+
+class Option extends React.Component {
+    render() {
+        return (
+            console.log(this.props); // {options: 'item1'}, there is no `key` index name in props object.
+            <li>{this.props.option}</li>
+        );
+    }
+}
+```
+
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
 - https://reactjs.org/docs/events.html#form-events
