@@ -382,6 +382,7 @@ class Options extends React.Component {
 
 #### React Component State
 ![react component state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/react-component-state.jpg)
+Code example : [sample counter with react component and state](https://github.com/harryosmar/the-complete-react-course-with-redux/blob/master/indecision-app/src/playground/es6-counter-with-react-component-and-state.js)
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
