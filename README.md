@@ -15,9 +15,10 @@
     * [arguments object no longer bound with arrow functions](#arguments-object-no-longer-bound-with-arrow-functions)
     * [can't access arguments object](#cant-access-arguments-object)
     * [this keyword no longer bound](#this-keyword-no-longer-bound)
-    * [Manual Binding](#manual-binding)
-    * [Array in JSX](#array-in-jsx)
-    * [React Component](#react-component)
+  * [Manual Binding](#manual-binding)
+  * [Array in JSX](#array-in-jsx)
+  * [React Component](#react-component)
+    * [Component Props](#react-component-props)
 * [Other Links](#other-links)
 
 ## NOTE
