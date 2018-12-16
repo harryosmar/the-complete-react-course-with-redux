@@ -496,7 +496,7 @@ class Counter extends React.Component {
 ![prop VS state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/prop-vs-state.jpg)
 
 #### Stateless Function Component
-Simple react component in form of function, but does not have any state/stateless. Usefull for react component which only need to render, without has any logic related to `state`.
+Simple react component in form of function, but does not have any state/`stateless`. Usefull for react component which only needed to render, without has any logic related to `state`.
 But this stateless function still can have `props`.
 ```
 const User = (props) => {
