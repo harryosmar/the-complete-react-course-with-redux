@@ -25,7 +25,7 @@
     * [React Component State](#react-component-state)
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
-    * [stateless function component](#stateless-function-component)
+    * [Stateless Function Component](#stateless-function-component)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -505,7 +505,8 @@ const User = (props) => {
     );
 }
 
-ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('container')); //<div id="container"><div><p>name: Spongebob</p><p>age: 17</p></div></div>
+ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('container'));
+//<div id="container"><div><p>name: Spongebob</p><p>age: 17</p></div></div>
 ```
 
 
