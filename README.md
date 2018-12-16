@@ -335,7 +335,7 @@ class Option extends React.Component {
 }
 ```
 
-> Because props can use `function` as a value, for nested React Component, *the child can communicate with the parent component function*, if that function pass as the prop attribute.
+> Because props can use `function` as a value, for nested React Component, *the child can communicate with the parent component function*, if that function pass as the prop attribute to the child component.
 ```
 class ParentComponent extends React.Component {
     parentFunction() {
