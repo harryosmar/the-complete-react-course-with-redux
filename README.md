@@ -17,6 +17,7 @@
     * [this keyword no longer bound](#this-keyword-no-longer-bound)
     * [Manual Binding](#manual-binding)
     * [Array in JSX](#array-in-jsx)
+    * [React Component](#react-component)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -238,6 +239,30 @@ const optionsTemplate = (
         {options.map((option, index) => <li key={index}>{option}</li>)}
     </ol>
 ); // <ol><li>item1</li><li>item2</li></ol>
+```
+
+### React Component
+> react component is a `es6 class` that extends `React.Component` class, and define `render` method.
+```
+class Header extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Header</h1>
+                <h2>Sub Header</h2>
+            </div>
+        );
+    }
+}
+```
+How to use that that `Header` component
+```
+const jsxTemplate = (
+    <div>
+        <Header />
+    </div>
+);
+ReactDOM.render(jsxTemplate, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>Sub Header</h2></div></div>
 ```
 
 ## Other Links
