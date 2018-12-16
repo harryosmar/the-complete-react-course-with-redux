@@ -23,6 +23,7 @@
       * [Example with simple object](example-with-simple-object)
       * [Example with react component](example-with-react-component)
     * [React Component State](#react-component-state)
+      * [setState syntax](#setstate-syntax)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -383,6 +384,78 @@ class Options extends React.Component {
 #### React Component State
 ![react component state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/react-component-state.jpg)
 Code example : [sample counter with react component and state](https://github.com/harryosmar/the-complete-react-course-with-redux/blob/master/indecision-app/src/playground/es6-counter-with-react-component-and-state.js)
+
+##### setState syntax
+
+- pass `object` as parameter to `setState` function *AVOID THIS*
+```
+class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.reset = this.reset.bind(this);
+        this.state = {
+            count: 15
+        };
+    }
+
+    // when this reset method is called count set to 16, not as expected, should be 1
+    reset() {
+        this.setState({
+            count: 0
+        });
+
+        this.setState({
+            count: ++this.state.count
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.reset}>reset</button>
+            </div>
+        );
+    }
+}
+```
+That's happened cause react run the `setState` in a-sync way. So in the 2nd called of `setState`, it still got the `original` value not the `prevState` which is `1`. By using parameter `function`, we can get this `prevState`.
+
+- pass `function` as parameter to `setState` function *PREFERRED*
+```
+class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.reset = this.reset.bind(this);
+        this.state = {
+            count: 15
+        };
+    }
+
+    // when this reset method is called count set to 1, as expected
+    reset() {
+        this.setState(() => {
+            return {
+                count: 0
+            };
+        });
+
+        this.setState((prevState) => {
+            return {
+                count: ++prevState.count
+            };
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.reset}>reset</button>
+            </div>
+        );
+    }
+}
+```
+
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
