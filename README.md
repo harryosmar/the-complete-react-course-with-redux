@@ -546,3 +546,4 @@ ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('conta
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
 - https://reactjs.org/docs/events.html#form-events
+- [react developer tool - chrome extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
