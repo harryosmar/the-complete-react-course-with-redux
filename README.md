@@ -24,6 +24,7 @@
       * [Example with react component](example-with-react-component)
     * [React Component State](#react-component-state)
       * [setState syntax](#setstate-syntax)
+    * [prop VS state](#prop-vs-state)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -487,6 +488,8 @@ class Counter extends React.Component {
 }
 ```
 
+#### prop VS state
+![prop VS state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/prop-vs-state.jpg)
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
