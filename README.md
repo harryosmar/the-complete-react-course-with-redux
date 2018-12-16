@@ -35,7 +35,9 @@ let template = (
 );
 ```
 > `JSX expression` would ignore/not render `boolean`, `undefined` and `null` value.
-> But `JSX` support others literal value `string`, `number` and even supports `array`
+
+> But `JSX` support others literal value `string`, `number` and even supports `array`.
+
 > `JSX` can render `JSX`, nested `JSX`
 
 ### Conditional Rendering in JSX
