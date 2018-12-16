@@ -418,7 +418,7 @@ class Counter extends React.Component {
     }
 }
 ```
-That's happened cause react run the `setState` in a-sync way. So in the 2nd called of `setState`, it still got the `original` value not the `prevState` which is `1`. By using parameter `function`, we can get this `prevState`.
+That's happened cause react run the `setState` in a-sync way. So in the 2nd called of `setState`, it still got the `original` value `15` not the `prevState` `0`. By using parameter `function`, we can get this `prevState`.
 
 - pass `function` as parameter to `setState` function *PREFERRED*
 ```
