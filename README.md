@@ -299,7 +299,7 @@ class SubHeader extends React.Component {
 
 ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>This is the Sub Header text</h2></div></div>
 ```
-> `key` keyword can not be used in as the `prop` name. Because React used it as identifier for unique childs elements. To avoid this warning `Warning: Each child in an array or iterator should have a unique "key" prop.`
+> `key` keyword can not be used as the `prop` name. Because React used it as identifier for unique childs elements. To avoid this warning `Warning: Each child in an array or iterator should have a unique "key" prop.`
 
 ```
 class Options extends React.Component {
