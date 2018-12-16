@@ -249,20 +249,24 @@ class Header extends React.Component {
         return (
             <div>
                 <h1>Header</h1>
-                <h2>Sub Header</h2>
+                <SubHeader />
             </div>
+        );
+    }
+}
+
+// example for `nested` component
+class SubHeader extends React.Component {
+    render() {
+        return (
+            <h2>Sub Header</h2>
         );
     }
 }
 ```
 How to use that `Header` component
 ```
-const jsxTemplate = (
-    <div>
-        <Header />
-    </div>
-);
-ReactDOM.render(jsxTemplate, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>Sub Header</h2></div></div>
+ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>Sub Header</h2></div></div>
 ```
 
 ## Other Links
