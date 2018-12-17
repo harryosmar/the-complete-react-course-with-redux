@@ -10,6 +10,23 @@ class IndecisionApp extends React.Component {
         this.handleRemoveOption = this.handleRemoveOption.bind(this);
     }
 
+    componentDidMount() {
+        try {
+            let options = JSON.parse(localStorage.getItem('options'));
+            if (options) {
+                this.setState(() => ({ options: options }));
+            }
+        } catch(e) {
+            // do nothing
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.options.length !== this.state.options.length) {
+            localStorage.setItem('options', JSON.stringify(this.state.options));
+        }
+    }
+
     handlePick() {
         const selectedIndexOption = Math.floor(Math.random() * this.state.options.length);
         alert(this.state.options[selectedIndexOption]);
@@ -74,6 +91,7 @@ const Action = (props) => {
 const Options = (props) => {
     return (
         <div>
+            {props.options.length === 0 && <p>Please add an option to get started</p>}
             <button disabled={props.options.length === 0} onClick={props.handleRemoveAll}>Remove All</button>
             <p>Here are your options</p>
             <ol>
