@@ -27,7 +27,7 @@
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
-  * [Simplify returning an object](#simplify-returning-an-object)
+  * [Simplify returning an object](#simplify-returning an-object)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -487,6 +487,8 @@ class Counter extends React.Component {
 ```
 That's happened cause react run the `setState` in a-sync way. So in the 2nd called of `setState`, it still got the `original` value `15` not the `prevState` `0`. By using parameter `function`, we can get this `prevState`.
 
+> Do not change `prevState`, it should be immutable, because it can affect the lyfe cycle method like `componentDidUpdate`. We want to use the actual `prevState`, not the `prevState` that we accidentally changed.
+
 - pass `function` as parameter to `setState` function *PREFERRED*
 ```
 class Counter extends React.Component {
@@ -506,9 +508,10 @@ class Counter extends React.Component {
             };
         });
 
+        // ++prevState.count is not recomended because it changes the prevState.count
         this.setState((prevState) => {
             return {
-                count: ++prevState.count
+                count: prevState.count + 1
             };
         });
     }
@@ -529,9 +532,6 @@ class Counter extends React.Component {
 #### Stateless Function Component
 Simple react component in form of function, but does not have any state/`stateless`. Usefull for react component which only needed to render, without has any logic related to `state`.
 But this stateless function still can have `props`.
-
-> This `react stateless function component`, also did not have lifecycle method access, likes : `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`, etc.
-
 ```
 const User = (props) => {
     return (
@@ -564,4 +564,3 @@ const getUser = () => ({'username': 'spongebob'});
 - https://reactjs.org/docs/dom-elements.html
 - https://reactjs.org/docs/events.html#form-events
 - [react developer tool - chrome extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-- https://reactjs.org/docs/state-and-lifecycle.html
