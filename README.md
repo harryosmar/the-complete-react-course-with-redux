@@ -27,7 +27,7 @@
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
-  * [Simplify returning an object](#simplify-returning an-object)
+  * [Simplify returning an object](#simplify-returning-an-object)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -529,6 +529,9 @@ class Counter extends React.Component {
 #### Stateless Function Component
 Simple react component in form of function, but does not have any state/`stateless`. Usefull for react component which only needed to render, without has any logic related to `state`.
 But this stateless function still can have `props`.
+
+> This `react stateless function component`, also did not have lifecycle method access, likes : `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`, etc.
+
 ```
 const User = (props) => {
     return (
