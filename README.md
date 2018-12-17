@@ -27,7 +27,7 @@
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
-  * [Simplify returning an object](#simplify-returning an-object)
+  * [Simplify returning an object](#simplify-returning-an-object)
 * [Other Links](#other-links)
 
 ## NOTE
