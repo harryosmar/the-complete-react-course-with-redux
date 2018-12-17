@@ -27,6 +27,7 @@
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
+  * [Simplify returning an object](#simplify-returning an-object)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -540,6 +541,19 @@ const User = (props) => {
 
 ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('container'));
 //<div id="container"><div><p>name: Spongebob</p><p>age: 17</p></div></div>
+```
+
+### Simplify returning an object
+
+```
+const getUser = () => {
+    return {
+        'username': 'spongebob'
+    };
+}
+
+// simplify to this
+const getUser = () => ({'username': 'spongebob'});
 ```
 
 
