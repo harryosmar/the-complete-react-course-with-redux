@@ -564,3 +564,4 @@ const getUser = () => ({'username': 'spongebob'});
 - https://reactjs.org/docs/dom-elements.html
 - https://reactjs.org/docs/events.html#form-events
 - [react developer tool - chrome extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+- https://reactjs.org/docs/state-and-lifecycle.html
