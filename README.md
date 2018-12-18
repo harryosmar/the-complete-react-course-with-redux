@@ -612,3 +612,4 @@ defaultSubtract(5, 2); // output 3
 - https://reactjs.org/docs/state-and-lifecycle.html
 - https://webpack.js.org/configuration/
 - https://nodejs.org/api/path.html
+- https://babeljs.io/docs/en/babel-preset-latest

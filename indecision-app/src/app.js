@@ -9,4 +9,4 @@ console.log(add(1, 2), multiply(3,4), deafultSubstract(6,1));
 console.log(isAdult(18), canDrink(21), isSenior(65));
 console.log('email validation', validator.isEmail('foo@bar.com'));
 
-ReactDOM.render(React.createElement('p', {}, 'Paragraph'), document.getElementById('placedhere'));
+ReactDOM.render(<p>JSX Paragraph</p>, document.getElementById('placedhere'));
