@@ -589,6 +589,13 @@ const multiply = (num1, num2) => num1 * num2;
 const subtract = (num1, num2) => num1 - num2;
 export {add, multiply, default subtract};
 ```
+OR
+```
+export const add = (num1, num2) => num1 + num2;
+export const multiply = (num1, num2) => num1 * num2;
+const subtract = (num1, num2) => num1 - num2;
+export default subtract;
+```
 import
 ```
 import defaultSubtract, {add, multiply} from './FILE/PATH.js';
