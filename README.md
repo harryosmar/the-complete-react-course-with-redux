@@ -587,7 +587,7 @@ import {add, multiply} from './FILE/PATH.js';
 const add = (num1, num2) => num1 + num2;
 const multiply = (num1, num2) => num1 * num2;
 const subtract = (num1, num2) => num1 - num2;
-export {add, multiply, default subtract};
+export {add, multiply, subtract as default};
 ```
 OR
 ```
