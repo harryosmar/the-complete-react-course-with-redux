@@ -4,7 +4,7 @@ import AddOption from './AddOption.js';
 import Action from './Action.js';
 import Options from './Options.js';
 
-class IndecisionApp extends React.Component {
+export default class IndecisionApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -76,5 +76,3 @@ class IndecisionApp extends React.Component {
 IndecisionApp.defaultProps = {
     options: []
 }
-
-export default IndecisionApp;

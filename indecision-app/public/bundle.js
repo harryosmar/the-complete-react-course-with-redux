@@ -21673,11 +21673,12 @@ var IndecisionApp = function (_React$Component) {
     return IndecisionApp;
 }(_react2.default.Component);
 
+exports.default = IndecisionApp;
+
+
 IndecisionApp.defaultProps = {
     options: []
 };
-
-exports.default = IndecisionApp;
 
 /***/ })
 /******/ ]);
