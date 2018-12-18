@@ -28,6 +28,8 @@
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
   * [Simplify returning an object](#simplify-returning-an-object)
+  * [ES6 export-import](es6-export-import)
+    * [named export](#named-export)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -559,9 +561,30 @@ const getUser = () => {
 const getUser = () => ({'username': 'spongebob'});
 ```
 
+### ES6 export-import
+
+#### named export
+
+```
+export const add = (num1, num2) => num1 + num2;
+export const multiply = (num1, num2) => num1 * num2;
+```
+OR
+```
+const add = (num1, num2) => num1 + num2;
+const multiply = (num1, num2) => num1 * num2;
+export {add, multiply};
+```
+How to import that
+```
+import {add, multiply} from './FILE/PATH.js';
+```
+
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
 - https://reactjs.org/docs/events.html#form-events
 - [react developer tool - chrome extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - https://reactjs.org/docs/state-and-lifecycle.html
+- https://webpack.js.org/configuration/
+- https://nodejs.org/api/path.html
