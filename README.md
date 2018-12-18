@@ -30,6 +30,7 @@
   * [Simplify returning an object](#simplify-returning-an-object)
   * [ES6 export-import](es6-export-import)
     * [named export](#named-export)
+    * [default export](#default-export)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -580,6 +581,22 @@ How to import that
 import {add, multiply} from './FILE/PATH.js';
 ```
 
+#### default export
+- we don't have to reference by `name`.
+```
+const add = (num1, num2) => num1 + num2;
+const multiply = (num1, num2) => num1 * num2;
+const subtract = (num1, num2) => num1 - num2;
+export {add, multiply, default subtract};
+```
+import
+```
+import defaultSubtract, {add, multiply} from './FILE/PATH.js';
+
+
+// we can change the name, because it always be refered to default.
+defaultSubtract(5, 2); // output 3
+```
 
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
