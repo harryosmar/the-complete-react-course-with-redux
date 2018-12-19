@@ -22,5 +22,5 @@ yarn install
 
 ### using live-server
 ```
-live-server public/
+yarn dev-server
 ```
