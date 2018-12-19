@@ -614,3 +614,5 @@ defaultSubtract(5, 2); // output 3
 - https://nodejs.org/api/path.html
 - https://babeljs.io/docs/en/babel-preset-latest
 - https://webpack.js.org/configuration/devtool/
+- https://webpack.js.org/configuration/dev-server/
+- https://www.npmjs.com/package/babel-plugin-transform-class-properties
