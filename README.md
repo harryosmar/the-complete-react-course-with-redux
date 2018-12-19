@@ -283,6 +283,7 @@ class SubHeader extends React.Component {
     }
 }
 ```
+
 How to use that `Header` component
 ```
 ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>Sub Header</h2></div></div>
@@ -537,6 +538,7 @@ class Counter extends React.Component {
 Simple react component in form of function, but does not have any state/`stateless`. Usefull for react component which only needed to render, without has any logic related to `state`.
 But this stateless function still can have `props`.
 ```
+// sample with explicit return
 const User = (props) => {
     return (
         <div>
@@ -548,6 +550,16 @@ const User = (props) => {
 
 ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('container'));
 //<div id="container"><div><p>name: Spongebob</p><p>age: 17</p></div></div>
+```
+
+Sample with implicit return JSX
+```
+const User = (props) => (
+    <div>
+        <p>name: {props.name}</p>
+        <p>age: {props.age}</p>
+    </div>
+);
 ```
 
 #### Passing children to Component
@@ -634,4 +646,4 @@ defaultSubtract(5, 2); // output 3
 - https://webpack.js.org/configuration/devtool/
 - https://webpack.js.org/configuration/dev-server/
 - https://www.npmjs.com/package/babel-plugin-transform-class-properties
-- https://github.com/reactjs/react-modal#examples
+- https://github.com/reactjs/react-modal#examples 
