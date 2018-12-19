@@ -27,6 +27,7 @@
       * [setState syntax](#setstate-syntax)
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
+    * [Passing children to Component](#passing-children-to-component)
   * [Simplify returning an object](#simplify-returning-an-object)
   * [ES6 export-import](es6-export-import)
     * [named export](#named-export)
@@ -547,6 +548,23 @@ const User = (props) => {
 
 ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('container'));
 //<div id="container"><div><p>name: Spongebob</p><p>age: 17</p></div></div>
+```
+
+#### Passing children to Component
+> use component built in `props.children`
+```
+const Layout = (props) => {
+    return (
+        <div>
+            <h1>Header</h1>
+            {props.children}
+            <p>Footer</p>
+        </div>
+    );
+};
+
+ReactDOM.render(<Layout><p>inline text</p></Layout>, document.getElementById('container'));
+// <div id="container"><div><h1>Header</h1><p>inline text</p><p>Footer</p></div></div>
 ```
 
 ### Simplify returning an object
