@@ -646,4 +646,6 @@ defaultSubtract(5, 2); // output 3
 - https://webpack.js.org/configuration/devtool/
 - https://webpack.js.org/configuration/dev-server/
 - https://www.npmjs.com/package/babel-plugin-transform-class-properties
-- https://github.com/reactjs/react-modal#examples 
+- https://github.com/reactjs/react-modal#examples
+- https://sass-lang.com/guide
+- https://www.npmjs.com/package/package
