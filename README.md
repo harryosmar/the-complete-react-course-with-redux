@@ -651,3 +651,4 @@ defaultSubtract(5, 2); // output 3
 - https://www.npmjs.com/package/package
 - http://getbem.com/
 - https://necolas.github.io/normalize.css/
+- http://sass-lang.com/documentation/Sass/Script/Functions.html
