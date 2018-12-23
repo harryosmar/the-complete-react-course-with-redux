@@ -33,6 +33,7 @@
     * [named export](#named-export)
     * [default export](#default-export)
   * [React Router](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#react-router)
+  * [Redux](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#redux)
 * [Other Links](#other-links)
 
 ## NOTE

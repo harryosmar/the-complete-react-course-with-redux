@@ -17,6 +17,7 @@ yarn dev-server
   * [404 Page](#404-page)
   * [Linking Between Routes](#linking-between-routes)
   * [Query String and Url Parameters](#query-string-and-url-parameters)
+* [Redux](#redux)
 
 ## React Router
 
@@ -64,7 +65,8 @@ module.exports = {
 };
 ```
 
-## 404 Page
+###  404 Page
+
 ```
 import {BrowserRouter, Route} from 'react-router-dom';
 const NotFound = () => (
@@ -84,11 +86,11 @@ const routes = (
 );
 ```
 
-## Linking Between Routes
+### Linking Between Routes
 
 - Using [`Switch`](https://reacttraining.com/react-router/web/api/Switch) component imported from `react-router-dom`, to enable `break` when the match [`path`](https://reacttraining.com/react-router/web/api/Route/path-string-string) already found, so it will not continue to check another component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) path. It's like `switch case` logic.
 
-## Query String and Url Parameters
+### Query String and Url Parameters
 
 Component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) will delegate it's [Route props](https://reacttraining.com/react-router/web/api/Route/route-props) to it's own [props-component](https://reacttraining.com/react-router/web/api/Route/component).
 
@@ -113,6 +115,26 @@ const AppRouter = () => (
     </BrowserRouter>
 );
 ```
+
+## Redux
+
+React provide [`component state`](https://reactjs.org/docs/state-and-lifecycle.html), used as data binding on JSX template. 
+
+Problem with react [`component state`](https://reactjs.org/docs/state-and-lifecycle.html).
+- Could not be used for complex state management, where the state can be accessed by many components, even the components is not related (eg: components does not have the same parent component).
+![complex state management](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/problem1-complex-state.jpg)
+- Simple react application can used only 1 parent component. Then stored the state in this parent. The parent then delegate : this state and function needed to change the state as [props](https://reactjs.org/docs/components-and-props.html) to the childs components. This could be resulted on tight coupled relations between components, so the component is not reusable.
+![tight coupled component](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/problem2-tight-coupled-component.jpg)
+
+
+> The *questions*
+
+![question for complex state problem](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/questions-for-complex-component-state.jpg)
+
+
+> The *solution* is [`Redux`](https://github.com/reduxjs/react-redux)
+
+![redux as solution for complex state problem](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/redux-solution-to-complex-state-problems.jpg)
 
 # links
 
