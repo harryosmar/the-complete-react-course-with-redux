@@ -51,10 +51,10 @@ const routes = (
 ReactDOM.render(routes, document.getElementById('container'));
 ```
 
-- `BrowserRouter` must only has one child element. That's why, all the child `<Route />` component is wrapped inside `<div>` element. To avoid this error `Uncaught Error: A <Router> may have only one child element`
+- [`<BrowserRouter />`](https://reacttraining.com/react-router/web/api/BrowserRouter) must only has one child element. That's why, all the child [`<Route />`](https://reacttraining.com/react-router/web/api/Route) component is wrapped inside `<div>` element. To avoid this error `Uncaught Error: A <Router> may have only one child element`
 - When we access the `/create` url directly in the browser, we will get `404` Not Found error response. Because in that path, the `index.html` is not available. `index.html` needed, because it's contained the bundled js files, where the React Router script is implemented.
 
-Solution : in `DEV`, We need to set webpack config  `devServer` > `historyApiFallback` value to `true`. To enable load this `index.html` page.
+Solution : *in `DEV`*, We need to set webpack config  [`devServer historyApiFallback`](https://webpack.js.org/configuration/dev-server/#devserver-historyapifallback) value to `true`. To enable load this `index.html` page.
 ```
 module.exports = {
     devServer: {
@@ -85,7 +85,7 @@ const routes = (
 
 ## Linking Between Routes
 
-- We are using `Switch` component imported from `react-router-dom`, to enable `break` when the match `path` already found, so it will not continue to check another component `<Route>` path. It's like `switch case` logic.
+- We are using [`Switch`](https://reacttraining.com/react-router/web/api/Switch) component imported from `react-router-dom`, to enable `break` when the match [`path`](https://reacttraining.com/react-router/web/api/Route/path-string-string) already found, so it will not continue to check another component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) path. It's like `switch case` logic.
 
 # links
 
