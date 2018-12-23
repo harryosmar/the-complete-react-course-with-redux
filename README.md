@@ -32,7 +32,7 @@
   * [ES6 export-import](es6-export-import)
     * [named export](#named-export)
     * [default export](#default-export)
-  * [React Router](#react-router)
+  * [React Router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/readme.md#react-router)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -636,10 +636,6 @@ import defaultSubtract, {add, multiply} from './FILE/PATH.js';
 defaultSubtract(5, 2); // output 3
 ```
 
-### React Router
-![react router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/react-client-router.jpg)
-
-
 ## Other Links
 - https://reactjs.org/docs/dom-elements.html
 - https://reactjs.org/docs/events.html#form-events
@@ -657,3 +653,5 @@ defaultSubtract(5, 2); // output 3
 - http://getbem.com/
 - https://necolas.github.io/normalize.css/
 - http://sass-lang.com/documentation/Sass/Script/Functions.html
+- https://github.com/ReactTraining/react-router
+- https://reacttraining.com/react-router/
