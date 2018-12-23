@@ -14,9 +14,10 @@ yarn dev-server
 # Documentation
 
 * [React Router](#react-router)
-
+  * [404 Page](#404-page)
 
 ## React Router
+
 ![react router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/react-client-router.jpg)
 
 Example :
@@ -59,3 +60,29 @@ module.exports = {
     }
 };
 ```
+
+## 404 Page
+```
+import {BrowserRouter, Route} from 'react-router-dom';
+const NotFound = () => (
+    <div>
+        404 page
+    </div>
+);
+
+const routes = (
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" component={ExpenseDashboardPage} exact={true} />
+            <Route path="/create" component={AddExpensePage}/>
+            <Route component={NotFound}/>
+        </Switch>
+    </BrowserRouter>
+);
+````
+- We are using `Switch` component imported from `react-router-dom`, to enable `break` when the match `path` already found, so it will not continue to check another component `<Route>` path. It's like `switch case` logic.
+
+# Links
+
+- https://github.com/ReactTraining/react-router
+- https://reacttraining.com/react-router/

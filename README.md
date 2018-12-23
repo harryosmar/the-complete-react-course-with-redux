@@ -653,5 +653,3 @@ defaultSubtract(5, 2); // output 3
 - http://getbem.com/
 - https://necolas.github.io/normalize.css/
 - http://sass-lang.com/documentation/Sass/Script/Functions.html
-- https://github.com/ReactTraining/react-router
-- https://reacttraining.com/react-router/
