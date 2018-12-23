@@ -90,7 +90,7 @@ const routes = (
 
 ## Query String and Url Parameters
 
-Component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) will delegate it's [props](https://reacttraining.com/react-router/web/api/Route/route-props) to the [props-component](https://reacttraining.com/react-router/web/api/Route/component).
+Component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) will delegate it's [props](https://reacttraining.com/react-router/web/api/Route/route-props) to it's own [props-component](https://reacttraining.com/react-router/web/api/Route/component).
 
 The props that will be delegated :
 - [match](https://reacttraining.com/react-router/web/api/match)
