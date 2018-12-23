@@ -126,6 +126,7 @@ Problem with react [`component state`](https://reactjs.org/docs/state-and-lifecy
 - Simple react application can use only 1 parent component. Then stored the state in the parent. Then the parent delegate : 
   - this state and
   - function needed to change the state
+
 as [props](https://reactjs.org/docs/components-and-props.html) to the childs components. This could be resulted on tight coupled relations between components, so the component is not reusable.
 ![tight coupled component](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/problem2-tight-coupled-component.jpg)
 
