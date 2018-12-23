@@ -16,6 +16,7 @@ yarn dev-server
 * [React Router](#react-router)
   * [404 Page](#404-page)
   * [Linking Between Routes](#linking-between-routes)
+  * [Query String and Url Parameters](#query-string-and-url-parameters)
 
 ## React Router
 
@@ -86,6 +87,27 @@ const routes = (
 ## Linking Between Routes
 
 - We are using [`Switch`](https://reacttraining.com/react-router/web/api/Switch) component imported from `react-router-dom`, to enable `break` when the match [`path`](https://reacttraining.com/react-router/web/api/Route/path-string-string) already found, so it will not continue to check another component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) path. It's like `switch case` logic.
+
+## Query String and Url Parameters
+
+Component [`<Route>`](https://reacttraining.com/react-router/web/api/Route) will delegate it's [props](https://reacttraining.com/react-router/web/api/Route/route-props) to the [props-component](https://reacttraining.com/react-router/web/api/Route/component).
+
+```
+import React from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+const EditExpensePage = (props) => (
+    <div>
+        edit expense with id : {props.match.params.id}
+    </div>
+);
+
+const AppRouter = () => (
+    <BrowserRouter>
+         <Route path="/edit/:id" component={EditExpensePage}/>
+    </BrowserRouter>
+);
+```
 
 # links
 
