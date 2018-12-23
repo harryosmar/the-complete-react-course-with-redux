@@ -123,7 +123,10 @@ React provide [`component state`](https://reactjs.org/docs/state-and-lifecycle.h
 Problem with react [`component state`](https://reactjs.org/docs/state-and-lifecycle.html).
 - Could not be used for complex state management, where the state can be accessed by many components, even the components is not related (eg: components does not have the same parent component).
 ![complex state management](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/problem1-complex-state.jpg)
-- Simple react application can used only 1 parent component. Then stored the state in this parent. The parent then delegate : this state and function needed to change the state as [props](https://reactjs.org/docs/components-and-props.html) to the childs components. This could be resulted on tight coupled relations between components, so the component is not reusable.
+- Simple react application can use only 1 parent component. Then stored the state in the parent. Then the parent delegate : 
+  - this state and
+  - function needed to change the state
+as [props](https://reactjs.org/docs/components-and-props.html) to the childs components. This could be resulted on tight coupled relations between components, so the component is not reusable.
 ![tight coupled component](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/problem2-tight-coupled-component.jpg)
 
 
