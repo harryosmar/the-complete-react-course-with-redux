@@ -32,7 +32,7 @@
   * [ES6 export-import](es6-export-import)
     * [named export](#named-export)
     * [default export](#default-export)
-  * [React Router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/readme.md#react-router)
+  * [React Router](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#react-router)
 * [Other Links](#other-links)
 
 ## NOTE
