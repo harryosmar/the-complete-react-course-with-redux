@@ -18,6 +18,10 @@ yarn dev-server
   * [Linking Between Routes](#linking-between-routes)
   * [Query String and Url Parameters](#query-string-and-url-parameters)
 * [Redux](#redux)
+  * [createStore](#createstore)
+  * [action](#action)
+  * [subscribe](#subscribe)
+  * [reducer](#reducer)
 * [ES6 Destructuring](#es2-destructuring)
 
 ## React Router
@@ -143,7 +147,9 @@ as [props](https://reactjs.org/docs/components-and-props.html) to the childs com
 
 ### How redux works
 
-- Creating the redux store using [`createStore`](https://redux.js.org/basics/store) function
+#### createStore
+
+Creating the redux store using [`createStore`](https://redux.js.org/basics/store) function
 ```
 import { createStore } from 'redux';
 
@@ -154,7 +160,9 @@ const store = createStore((currentState = {count: 1}) => {
 console.log(store.getState()); // {count: 0}
 ```
 
-- How to update the state, using [`action`](https://redux.js.org/basics/actions)
+#### action
+
+How to update the state, using [`action`](https://redux.js.org/basics/actions)
 Action is an object. Where we can define the `type` of the action. Usually the type is a string with value all `UPPERCASE`.
 > When changing the state do not modify the `currentState` or [`action`](https://redux.js.org/basics/actions) parameter. It should be immutable.
 
@@ -180,7 +188,9 @@ store.dispatch({
 console.log(store.getState()); // {count: 1}
 ```
 
-- How to watching the state changes use [`subscribe`](https://redux.js.org/api/store#subscribe) listener
+#### subscribe
+
+How to watching the state changes use [`subscribe`](https://redux.js.org/api/store#subscribe) listener
 
 ```
 import { createStore } from 'redux';
@@ -234,6 +244,27 @@ store.dispatch({
 store.dispatch({
     type: 'INCREMENT'
 });
+```
+
+#### Reducer
+
+- [Reducer](https://redux.js.org/glossary#reducer) are pure function.
+- Never changes [`state`](https://redux.js.org/glossary#state) or [`action`](https://redux.js.org/glossary#action)
+
+```
+import { createStore } from 'redux';
+
+const countReducer = () => (currentState = {count: 1}, action) => {
+    if (action.type === 'INCREMENT') {
+        return {
+            count: currentState + 1
+        };
+    }
+
+    return currentState;
+};
+
+const store = createStore(countReducer);
 ```
 
 ## ES6 Destructuring
