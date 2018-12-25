@@ -34,8 +34,7 @@
     * [default export](#default-export)
   * [React Router](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#react-router)
   * [Redux](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#redux)
-  * [
-ES6 Destructuring](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#
+  * [ES6 Destructuring](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#
 es6-destructuring)
 * [Other Links](#other-links)
 
