@@ -261,6 +261,13 @@ console.log(publishername);
 // array
 const [a, b, ...rest] = [10, 20, 30, 40, 50];
 // a:10, b:20, rest:[30,40,50]
+
+// destructuring function parameter
+const adding = ( {a = 0, b = 0} = {}, c = 100 ) => ( a + b + c );
+
+adding({a:1, b:2}, 0); // output 3
+adding(); // output 100
+
 ```
 
 # links
