@@ -143,7 +143,7 @@ as [props](https://reactjs.org/docs/components-and-props.html) to the childs com
 
 ### How redux works
 
-- Creating the redux store using `createStore` function
+- Creating the redux store using [`createStore`](https://redux.js.org/basics/store) function
 ```
 import { createStore } from 'redux';
 
@@ -154,9 +154,9 @@ const store = createStore((currentState = {count: 1}) => {
 console.log(store.getState()); // {count: 0}
 ```
 
-- How to update the state, using `action`
+- How to update the state, using [`action`](https://redux.js.org/basics/actions)
 Action is an object. Where we can define the `type` of the action. Usually the type is a string with value all `UPPERCASE`.
-> When changing the state do not modify the `currentState` or `action` parameter. It should be immutable.
+> When changing the state do not modify the `currentState` or [`action`](https://redux.js.org/basics/actions) parameter. It should be immutable.
 
 ```
 import { createStore } from 'redux';
@@ -180,7 +180,7 @@ store.dispatch({
 console.log(store.getState()); // {count: 1}
 ```
 
-- How to watching the state changes use `subscribe` function
+- How to watching the state changes use [`subscribe`](https://redux.js.org/api/store#subscribe) listener
 
 ```
 import { createStore } from 'redux';
@@ -238,7 +238,7 @@ store.dispatch({
 
 ## ES6 Destructuring
 
-This es6 (`destructuring`)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment] assignment syntax provide easy access to object, array.
+This es6 [`destructuring`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) assignment syntax provide easy access to object, array.
 
 ```
 const book = {
@@ -262,7 +262,6 @@ console.log(publishername);
 const [a, b, ...rest] = [10, 20, 30, 40, 50];
 // a:10, b:20, rest:[30,40,50]
 ```
-
 
 # links
 
