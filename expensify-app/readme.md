@@ -18,6 +18,7 @@ yarn dev-server
   * [Linking Between Routes](#linking-between-routes)
   * [Query String and Url Parameters](#query-string-and-url-parameters)
 * [Redux](#redux)
+* [ES6 Destructuring](#es2-destructuring)
 
 ## React Router
 
@@ -140,9 +141,133 @@ as [props](https://reactjs.org/docs/components-and-props.html) to the childs com
 
 ![redux as solution for complex state problem](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/redux-solution-to-complex-state-problems.jpg)
 
+### How redux works
+
+- Creating the redux store using `createStore` function
+```
+import { createStore } from 'redux';
+
+const store = createStore((currentState = {count: 1}) => {
+    return currentState;
+});
+
+console.log(store.getState()); // {count: 0}
+```
+
+- How to update the state, using `action`
+Action is an object. Where we can define the `type` of the action. Usually the type is a string with value all `UPPERCASE`.
+> When changing the state do not modify the `currentState` or `action` parameter. It should be immutable.
+
+```
+import { createStore } from 'redux';
+
+const store = createStore((currentState = {count: 1}, action) => {
+    if (action.type === 'INCREMENT') {
+        return {
+            count: currentState + 1
+        };
+    }
+
+    return currentState;
+});
+
+console.log(store.getState()); // {count: 0}
+
+store.dispatch({
+    type: 'INCREMENT'
+});
+
+console.log(store.getState()); // {count: 1}
+```
+
+- How to watching the state changes use `subscribe` function
+
+```
+import { createStore } from 'redux';
+
+const store = createStore((currentState = {count: 1}, action) => {
+    if (action.type === 'INCREMENT') {
+        return {
+            count: currentState + 1
+        };
+    }
+
+    return currentState;
+});
+
+store.subscribe(() => {
+    console.log(store.getState()); // called twice the 1st output {count: 1}, the 2nd {count: 2}
+};
+
+// 1st trigger to run `subscribe`
+store.dispatch({
+    type: 'INCREMENT'
+});
+
+// 2nd trigger to run `subscribe`
+store.dispatch({
+    type: 'INCREMENT'
+});
+```
+
+How to `unsubscribe`
+```
+
+// state : {count: 0}
+
+const unsubscribe = store.subscribe(() => {
+    console.log(store.getState()); // called just once output {count: 1}
+};
+
+store.dispatch({
+    type: 'INCREMENT'
+});
+
+unsubscribe(); // unsubscribe here
+
+// this will not trigger run `subscribe`
+store.dispatch({
+    type: 'INCREMENT'
+});
+
+// this will not trigger run `subscribe`
+store.dispatch({
+    type: 'INCREMENT'
+});
+```
+
+## ES6 Destructuring
+
+This es6 (`destructuring`)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment] assignment syntax provide easy access to object, array.
+
+```
+const book = {
+    title: 'Ego is the enemy',
+    author: 'Ryan Holiday',
+    publisher: {
+        name: 'Penguin'
+    }
+}
+
+// rename title to booktitle
+const { title: booktitle, author } = book;
+console.log(booktitle, author);
+
+// rename book.publisher.name to publishername and set default value 'Self-Published'
+const { name: publishername = 'Self-Published' } = book.publisher;
+
+console.log(publishername);
+
+// array
+const [a, b, ...rest] = [10, 20, 30, 40, 50];
+// a:10, b:20, rest:[30,40,50]
+```
+
+
 # links
 
 use components [`<Link>`](https://reacttraining.com/react-router/web/api/Link) or [`<NavLink>`](https://reacttraining.com/react-router/web/api/NavLink) imported from `react-router-dom`
 
 - https://github.com/ReactTraining/react-router
 - https://reacttraining.com/react-router/
+- http://redux.js.org/
