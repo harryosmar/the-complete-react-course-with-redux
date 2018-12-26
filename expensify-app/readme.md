@@ -19,10 +19,13 @@ yarn dev-server
   * [Query String and Url Parameters](#query-string-and-url-parameters)
 * [Redux](#redux)
   * [createStore](#createstore)
-  * [action](#action)
+  * [action and dispatch](#action-and-dispatch)
+    * [action generator](#action-generator)
   * [subscribe](#subscribe)
   * [reducer](#reducer)
-* [ES6 Destructuring](#es2-destructuring)
+  * [combinereducers](#combinereducers)
+* [ES6 Destructuring](#es6-destructuring)
+* [ES6 Spread Syntax](#es6-spread-syntax)
 
 ## React Router
 
@@ -160,7 +163,7 @@ const store = createStore((currentState = {count: 1}) => {
 console.log(store.getState()); // {count: 0}
 ```
 
-#### action
+#### action and dispatch
 
 How to update the state, using [`action`](https://redux.js.org/basics/actions)
 Action is an object. Where we can define the `type` of the action. Usually the type is a string with value all `UPPERCASE`.
@@ -181,11 +184,43 @@ const store = createStore((currentState = {count: 1}, action) => {
 
 console.log(store.getState()); // {count: 0}
 
+// dispatching/calling the action
 store.dispatch({
     type: 'INCREMENT'
 });
 
 console.log(store.getState()); // {count: 1}
+```
+
+##### action generator
+
+To avoid duplicate typing of action for each `dispatch`, move the `action` object to a generator function.
+
+```
+import { createStore } from 'redux';
+
+const incrementCount = () => ({
+    type: 'INCREMENT'
+});
+
+const store = createStore((currentState = {count: 1}, action) => {
+    if (action.type === 'INCREMENT') {
+        return {
+            count: currentState + 1
+        };
+    }
+
+    return currentState;
+});
+
+store.dispatch(incrementCount());
+console.log(store.getState()); // {count: 1}
+
+store.dispatch(incrementCount());
+console.log(store.getState()); // {count: 2}
+
+store.dispatch(incrementCount());
+console.log(store.getState()); // {count: 3}
 ```
 
 #### subscribe
@@ -267,6 +302,47 @@ const countReducer = () => (currentState = {count: 1}, action) => {
 const store = createStore(countReducer);
 ```
 
+#### combinereducers
+
+[`combinereducers`](https://redux.js.org/api/combinereducers) is used to split the [`reducer`](https://redux.js.org/glossary#reducer) into separate functions.
+
+```
+import { createStore, combineReducers } from 'redux';
+
+const expensesReducerDefaultState = [];
+
+const expensesReducer = (prevState = expensesReducerDefaultState, action) => {
+    switch (action) {
+        default:
+            return prevState;
+    }
+};
+
+const filtersReducerDefaultState = {
+    text: '',
+    sortBy: 'date',
+    startDate: undefined,
+    endDate: undefined
+};
+
+const filtersReducer = (prevState = filtersReducerDefaultState, action) => {
+    switch (action) {
+        default:
+            return prevState;
+    }
+};
+
+// combine 2 reducer : `expensesReducer` and `filtersReducer`
+const store = createStore(combineReducers
+    ({
+        expenses: expensesReducer,
+        filters: filtersReducer
+    })
+);
+
+console.log(store.getState()); // {expenses: Array(0), filters: {text: "", sortBy: "date", startDate: undefined, endDate: undefined}}
+```
+
 ## ES6 Destructuring
 
 This es6 [`destructuring`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) assignment syntax provide easy access to object, array.
@@ -299,6 +375,24 @@ const adding = ( {a = 0, b = 0} = {}, c = 100 ) => ( a + b + c );
 adding({a:1, b:2}, 0); // output 3
 adding(); // output 100
 
+```
+
+## ES6 Spread Syntax
+
+[`Spread syntax`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+```
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+// expected output: 6
+
+console.log(sum.apply(null, numbers));
+// expected output: 6
 ```
 
 # links
