@@ -332,7 +332,7 @@ const filtersReducer = (prevState = filtersReducerDefaultState, action) => {
     }
 };
 
-// combine 2 reducer : `expensesReducer` and `filtersReducer`
+// combine 2 reducers : `expensesReducer` and `filtersReducer`
 const store = createStore(combineReducers
     ({
         expenses: expensesReducer,
