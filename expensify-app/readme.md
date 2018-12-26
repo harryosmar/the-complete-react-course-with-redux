@@ -26,6 +26,7 @@ yarn dev-server
   * [combinereducers](#combinereducers)
 * [ES6 Destructuring](#es6-destructuring)
 * [ES6 Spread Syntax](#es6-spread-syntax)
+  * [ES6 Spread Syntax Object](#es6-spread-syntax-object)
 
 ## React Router
 
@@ -394,6 +395,31 @@ console.log(sum(...numbers));
 console.log(sum.apply(null, numbers));
 // expected output: 6
 ```
+
+### ES6 Spread Syntax Object
+
+- install the plugin [babel-plugin-transform-object-rest-spread](https://babeljs.io/docs/en/babel-plugin-transform-object-rest-spread.html)
+- add this as a plugin to `.babelrc` file
+```
+{
+  "plugins": ["transform-object-rest-spread"]
+}
+```
+- example
+```
+const user = {
+    name: 'spongebob'
+};
+
+// passing key:value
+console.log({ ...user, 'location': 'here'});
+// {name: 'spongebob', location: 'here'}
+
+// passing object instead
+console.log({ ...user, ...{'location': 'here'}});
+// {name: 'spongebob', location: 'here'}
+```
+
 
 # links
 
