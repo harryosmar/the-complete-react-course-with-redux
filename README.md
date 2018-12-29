@@ -35,6 +35,7 @@
   * [React Router](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#react-router)
   * [Redux](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#redux)
   * [ES6 Destructuring](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#es6-destructuring)
+* [SCSS](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/scss.md)
 * [Other Links](#other-links)
 
 ## NOTE
@@ -455,6 +456,8 @@ class Options extends React.Component {
     }
 }
 ```
+
+> To avoid this manual `bind` the `this`. We can use babel plugin `@babel/plugin-proposal-class-properties`(https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) which enabled `class` to have functions declared using arrow function.
 
 #### React Component State
 ![react component state](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/indecision-app/src/images/react-component-state.jpg)
