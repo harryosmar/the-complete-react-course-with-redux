@@ -27,7 +27,8 @@ yarn dev-server
 * [ES6 Destructuring](#es6-destructuring)
 * [ES6 Spread Syntax](#es6-spread-syntax)
   * [ES6 Spread Syntax Object](#es6-spread-syntax-object)
-* [High Order Components](#high-order-components)
+* [Higher Order Components](#higher-order-components)
+* [React Redux](#react-redux)
 
 ## React Router
 
@@ -440,9 +441,9 @@ ReactDOM.render(<Info {...objectInfo}/>, document.getElementById('container'));
 // <div id="container"><div><h1>Info</h1><p>The info is : this is a secret information</p></div></div>
 ```
 
-## High Order Components
+## Higher Order Components
 
-[High-Order Components/HOC](https://reactjs.org/docs/higher-order-components.html) is a component that renders another component and provide this benefits :
+[Higher-Order Components/HOC](https://reactjs.org/docs/higher-order-components.html) is a component that renders another component and provide this benefits :
 - reuse code
 - render hijacking
 - prop manipulation
@@ -491,6 +492,77 @@ ReactDOM.render(
 // <div id="container"><div><div><p>This is the 1st component message</p></div><div></div><div><p>This is the 3rd component message</p></div></div></div>
 ```
 
+## React Redux
+
+https://react-redux.js.org/
+
+The [`highers order component`](#higher-order-components) logic is used in [`react-redux connect`](https://react-redux.js.org/api/connect#connect).
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider, connect } from 'react-redux';
+
+// REDUCER
+const expensesReducer = (prevState = [], action) => {
+    switch (action.type) {
+        default:
+            return prevState;
+    }
+};
+const filtersReducerDefaultState = {
+    text: '',
+    sortBy: 'date',
+    startDate: undefined,
+    endDate: undefined
+};
+const filtersReducer = (prevState = filtersReducerDefaultState, action) => {
+    switch (action.type) {
+        default:
+            return prevState;
+    }
+};
+
+// REDUX STORE, COMBINE REDUCER
+const store = createStore(combineReducers
+    ({
+        expenses: expensesReducer,
+        filters: filtersReducer
+    })
+);
+
+// REACT COMPONENT
+const ExpenseList = (props) => (
+    <div>
+        Expense List : { props.expenses.length }
+        <p>{ props.filters.text }</p>
+    </div>
+);
+
+const mapStateToProps = (state) => (
+    {
+        expenses: state.expenses,
+        filters: state.filters
+    }
+);
+
+// HOC/higher order component created
+const hoc = connect(mapStateToProps);
+
+// MODIFIED REACT COMPONENT create new ExpenseList component which have access to redux store/state. The redux state mapped to ExpenseList props
+const NewExpenseList = hoc(ExpenseList);
+
+// Use reac-redux Provider, to delegate redux store/state
+const jsx = (
+    <Provider store={ store }>
+        <NewExpenseList />
+    </Provider>
+);
+
+ReactDOM.render(jsx, document.getElementById('container'));
+// <div id="container"><div>Expense List : 0<p></p></div></div>
+```
 
 # links
 

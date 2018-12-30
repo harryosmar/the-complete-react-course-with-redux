@@ -28,7 +28,7 @@
     * [prop VS state](#prop-vs-state)
     * [Stateless Function Component](#stateless-function-component)
     * [Passing children to Component](#passing-children-to-component)
-  * [High Order Components](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#high-order-components)
+  * [Higher Order Components](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#higher-order-components)
   * [Simplify returning an object](#simplify-returning-an-object)
   * [ES6 export-import](es6-export-import)
     * [named export](#named-export)
