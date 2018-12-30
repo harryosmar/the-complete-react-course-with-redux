@@ -27,6 +27,7 @@ yarn dev-server
 * [ES6 Destructuring](#es6-destructuring)
 * [ES6 Spread Syntax](#es6-spread-syntax)
   * [ES6 Spread Syntax Object](#es6-spread-syntax-object)
+* [High Order Components](#high-order-components)
 
 ## React Router
 
@@ -418,6 +419,76 @@ console.log({ ...user, 'location': 'here'});
 // passing object instead
 console.log({ ...user, ...{'location': 'here'}});
 // {name: 'spongebob', location: 'here'}
+```
+
+You can use spread object to define props in react component.
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const Info = (props) => (
+    <div>
+        <h1>Info</h1>
+        <p>The info is : {props.info}</p>
+    </div>
+);
+
+const objectInfo = {info: "this is a secret information"};
+
+ReactDOM.render(<Info {...objectInfo}/>, document.getElementById('container'));
+
+// <div id="container"><div><h1>Info</h1><p>The info is : this is a secret information</p></div></div>
+```
+
+## High Order Components
+
+[High-Order Components/HOC](https://reactjs.org/docs/higher-order-components.html) is a component that renders another component and provide this benefits :
+- reuse code
+- render hijacking
+- prop manipulation
+- abstraction state
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const FirstComponent = (props) => (
+    <p>This is the 1st component message</p>
+);
+
+const SecondComponent = (props) => (
+    <p>This is the 2nd component message</p>
+);
+
+const ThirdComponent = (props) => (
+    <p>This is the 3rd component message</p>
+);
+
+// HOC `withAdminWarning`
+const withAdminWarning = (WrappedComponent) => {
+    // return react component
+    return (props) => (
+        <div>
+            { props.isAdmin && <WrappedComponent {...props} />}
+        </div>
+    );
+};
+
+// create components which contained admin message
+const FirstComponentWithAdminWarning = withAdminWarning(FirstComponent);
+const SecondComponentWithAdminWarning = withAdminWarning(SecondComponent);
+const ThirdComponentWithAdminWarning = withAdminWarning(ThirdComponent);
+
+
+ReactDOM.render(
+    <div>
+        <FirstComponentWithAdminWarning isAdmin={true} />
+        <SecondComponentWithAdminWarning isAdmin={false} />
+        <ThirdComponentWithAdminWarning isAdmin={true} />
+    </div>,
+    document.getElementById('container')
+);
+// <div id="container"><div><div><p>This is the 1st component message</p></div><div></div><div><p>This is the 3rd component message</p></div></div></div>
 ```
 
 
