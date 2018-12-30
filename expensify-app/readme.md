@@ -512,7 +512,7 @@ const expensesReducer = (prevState = [], action) => {
     }
 };
 const filtersReducerDefaultState = {
-    text: '',
+    text: 'keyword',
     sortBy: 'date',
     startDate: undefined,
     endDate: undefined
@@ -561,7 +561,7 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById('container'));
-// <div id="container"><div>Expense List : 0<p></p></div></div>
+// <div id="container"><div>Expense List : 0<p>keywords</p></div></div>
 ```
 
 # links
