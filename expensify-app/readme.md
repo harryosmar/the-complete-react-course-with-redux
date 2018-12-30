@@ -494,8 +494,6 @@ ReactDOM.render(
 
 ## React Redux
 
-https://react-redux.js.org/
-
 The [`highers order component`](#higher-order-components) logic is used in [`react-redux connect`](https://react-redux.js.org/api/connect#connect).
 
 ```
@@ -571,3 +569,4 @@ use components [`<Link>`](https://reacttraining.com/react-router/web/api/Link) o
 - https://github.com/ReactTraining/react-router
 - https://reacttraining.com/react-router/
 - http://redux.js.org/
+- https://react-redux.js.org/
