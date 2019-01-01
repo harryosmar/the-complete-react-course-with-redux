@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore.js';
-import { addExpense } from './actions/expenses';
+import { addExpense, removeExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import { getVisibleExpenses } from './selectors/expenses';
 import { Provider } from 'react-redux';
@@ -11,10 +11,12 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({description: 'Water Bill', 'amount': 40000}));
+const expense1 = store.dispatch(addExpense({description: 'Water Bill', 'amount': 40000}));
 store.dispatch(addExpense({description: 'Gas Bill'}));
 store.dispatch(setTextFilter('bill'));
 store.dispatch(setTextFilter('water'));
+
+// store.dispatch(removeExpense({id: expense1.expense.id}));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);

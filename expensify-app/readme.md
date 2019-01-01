@@ -29,7 +29,7 @@ yarn dev-server
   * [ES6 Spread Syntax Object](#es6-spread-syntax-object)
 * [Higher Order Components](#higher-order-components)
 * [React Redux](#react-redux)
-
+  * [Dispatch Action From React Component](#dispatch-action-from-react-component)
 ## React Router
 
 ![react router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/react-client-router.jpg)
@@ -497,6 +497,9 @@ ReactDOM.render(
 
 The [`highers order component`](#higher-order-components) logic is used in [`react-redux connect`](https://react-redux.js.org/api/connect#connect).
 
+
+Complete example of [`connect-ing`](https://react-redux.js.org/api/connect#connect) [React Component](https://github.com/harryosmar/the-complete-react-course-with-redux#react-component) to [`Redux store`](https://redux.js.org/api/store), with [combine reducer](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#combinereducers).
+
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -561,6 +564,39 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById('container'));
 // <div id="container"><div>Expense List : 0<p>keywords</p></div></div>
+```
+
+### Dispatch Action From React Component
+
+We can access [`dispatch`](https://redux.js.org/api/store#dispatch) function from [React Component](https://github.com/harryosmar/the-complete-react-course-with-redux#react-component), after the component connected to [redux store](https://redux.js.org/api/store). The [`dispatch`](https://redux.js.org/api/store#dispatch) function will be available via connected-react-component [`props`](https://reactjs.org/docs/components-and-props.html).
+
+```
+import React from 'react';
+import { connect } from 'react-redux';
+
+const setTextFilter = (text = '') => ({
+    type: 'SET_TEXT_FILTER',
+    text
+});
+
+const ExpenseListFilter = (props) => (
+    <div>
+        <input value={props.filters.text} onChange={
+            (e) => {
+                props.dispatch(setTextFilter(e.target.value));
+            }
+        }/>
+    </div>
+);
+
+const mapStateToProps = (state) => ({
+    filters: state.filters
+});
+
+const ConnectedExpenseListFilter = connect(mapStateToProps)(ExpenseListFilter);
+
+<ConnectedExpenseListFilter />
+// <input value="">
 ```
 
 # links
