@@ -427,10 +427,11 @@ You can use spread object to define props in react component.
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Info = (props) => (
+// use destructuring for function parameters
+const Info = ( { info } ) => (
     <div>
         <h1>Info</h1>
-        <p>The info is : {props.info}</p>
+        <p>The info is : {info}</p>
     </div>
 );
 

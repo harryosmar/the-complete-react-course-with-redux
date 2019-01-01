@@ -35,7 +35,9 @@
     * [default export](#default-export)
   * [React Router](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#react-router)
   * [Redux](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#redux)
+  * [React Redux](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#react-redux)
   * [ES6 Destructuring](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#es6-destructuring)
+  * [ES6 Spread Syntax Object](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#es6-spread-syntax-object)
 * [SCSS](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/scss.md)
 * [Other Links](#other-links)
 
