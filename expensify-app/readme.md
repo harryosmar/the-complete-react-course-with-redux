@@ -570,6 +570,9 @@ ReactDOM.render(jsx, document.getElementById('container'));
 
 We can access [`dispatch`](https://redux.js.org/api/store#dispatch) function from [React Component](https://github.com/harryosmar/the-complete-react-course-with-redux#react-component), after the component connected to [redux store](https://redux.js.org/api/store). The [`dispatch`](https://redux.js.org/api/store#dispatch) function will be available via connected-react-component [`props`](https://reactjs.org/docs/components-and-props.html).
 
+example with control inputf for filter by keyword
+`<input type="text">`
+
 ```
 import React from 'react';
 import { connect } from 'react-redux';
