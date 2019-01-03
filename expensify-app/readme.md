@@ -30,6 +30,8 @@ yarn dev-server
 * [Higher Order Components](#higher-order-components)
 * [React Redux](#react-redux)
   * [Dispatch Action From React Component](#dispatch-action-from-react-component)
+* [Tips](#tips)
+  * [Event Target Property Persist](#event-target-property-persist)
 ## React Router
 
 ![react router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/react-client-router.jpg)
@@ -600,6 +602,52 @@ const ConnectedExpenseListFilter = connect(mapStateToProps)(ExpenseListFilter);
 
 <ConnectedExpenseListFilter />
 // <input value="">
+```
+
+## Tips
+
+### Event Target Property Persist
+
+[event target property](https://www.w3schools.com/jsref/event_target.asp) return the element that triggered the event.
+
+```
+alert(e.target);
+alert(e.target.value); // to get the element value
+```
+
+If directly accessed from react `setState` parameter callback, it will throw an error. To able to do that we need to `persist` the event.
+
+```
+import React from 'react';
+
+export default class ExpenseForm extends React.Component {
+    state = {
+        description: '',
+    };
+
+    onDescriptionChange = (e) => {
+        // persist the event
+        e.persist();
+        this.setState(() => ({ description : e.target.value}) );
+    };
+
+    render() {
+        return (
+            <div>
+                <form>
+                    <input
+                        type="text"
+                        name="description"
+                        autoFocus
+                        onChange={this.onDescriptionChange}
+                        value={this.state.description}
+                        placeholder="Description"
+                    />
+                </form>
+            </div>
+        );
+    };
+}
 ```
 
 # links
