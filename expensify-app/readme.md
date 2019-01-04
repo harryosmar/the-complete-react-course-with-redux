@@ -661,3 +661,4 @@ use components [`<Link>`](https://reacttraining.com/react-router/web/api/Link) o
 - https://react-redux.js.org/
 - https://momentjs.com/
 - https://github.com/airbnb/react-dates
+- https://github.com/zalmoxisus/redux-devtools-extension
