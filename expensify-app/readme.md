@@ -594,7 +594,7 @@ const ExpenseListFilter = (props) => (
     </div>
 );
 
-// We have access reducers `state` and `ExpenseListFilter` component `props`
+// We have access to `reducers` `state` and `ExpenseListFilter` component `props`
 const mapStateToProps = (state, props) => ({
     filters: state.filters
 });
