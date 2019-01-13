@@ -34,7 +34,8 @@ script `--` before `--watch` means that :
 - everything after `--` passed to `jest` command
 
 
-# Examples with throw error
+## Examples with throw error
+
 ```es6
 const sum = (a, b) => a + b;
 
@@ -47,7 +48,8 @@ test('adds 1 + 2 to equal 3', () => {
 });
 ```
 
-# Examples with expect method
+## Examples with expect method
+
 ```es6
 const sum = (a, b) => a + b;
 
@@ -56,5 +58,6 @@ test('adds 1 + 2 to equal 3', () => {
 });
 ```
 
-# Links
+## Links
+
 - https://jestjs.io/
