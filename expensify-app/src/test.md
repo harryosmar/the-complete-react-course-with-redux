@@ -35,7 +35,7 @@ script `--` before `--watch` means that :
 
 
 # Examples with throw error
-```
+```es6
 const sum = (a, b) => a + b;
 
 test('adds 1 + 2 to equal 3', () => {
@@ -48,7 +48,7 @@ test('adds 1 + 2 to equal 3', () => {
 ```
 
 # Examples with expect method
-```
+```es6
 const sum = (a, b) => a + b;
 
 test('adds 1 + 2 to equal 3', () => {
