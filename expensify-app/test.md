@@ -58,6 +58,25 @@ test('adds 1 + 2 to equal 3', () => {
 });
 ```
 
+Test script above using [`toBe`](https://jestjs.io/docs/en/expect#tobevalue) [`expect`](https://jestjs.io/docs/en/expect) method.
+
+To be will compare variables using strict comparison `===`.
+
+```es6
+[] === []; // false
+{} === {}; // false
+1 === 1; // true
+false === false; // true
+```
+
+For object or array comparison, instead of checking the object or array index-value one by one. We can use [`toEqual`](https://jestjs.io/docs/en/expect#toequalvalue) method.
+
+```es6
+expect({a:1}).toEqual({a:1}); // pass the assertion test
+```
+
+See List of available : [expect methods](https://jestjs.io/docs/en/expect#methods)
+
 ## Links
 
 - https://jestjs.io/
