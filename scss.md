@@ -9,7 +9,7 @@
 
 ## webpack config
 
-```
+```es6
 {
     module: {
         rules: [
@@ -43,7 +43,7 @@ app.js
 
 ## How to import
 inside `styles.scss`
-```
+```es6
 @import './base/setings';
 @import './base/base';
 @import './components/modal';
@@ -53,7 +53,7 @@ inside `styles.scss`
 ```
 
 inside `app.js`
-```
+```es6
 import 'normalize.css/normalize.css'; // external packages
 import './styles/styles.scss';
 ```
