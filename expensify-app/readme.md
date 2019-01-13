@@ -32,6 +32,8 @@ yarn dev-server
   * [Dispatch Action From React Component](#dispatch-action-from-react-component)
 * [Tips](#tips)
   * [Event Target Property Persist](#event-target-property-persist)
+* [Test using Jest](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app/test.md)
+
 ## React Router
 
 ![react router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/react-client-router.jpg)
@@ -662,3 +664,4 @@ use components [`<Link>`](https://reacttraining.com/react-router/web/api/Link) o
 - https://momentjs.com/
 - https://github.com/airbnb/react-dates
 - https://github.com/zalmoxisus/redux-devtools-extension
+- https://jestjs.io/
