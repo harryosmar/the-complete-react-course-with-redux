@@ -161,7 +161,7 @@ Creating the redux store using [`createStore`](https://redux.js.org/basics/store
 ```
 import { createStore } from 'redux';
 
-const store = createStore((currentState = {count: 1}) => {
+const store = createStore((currentState = {count: 0}) => {
     return currentState;
 });
 
@@ -177,10 +177,10 @@ Action is an object. Where we can define the `type` of the action. Usually the t
 ```
 import { createStore } from 'redux';
 
-const store = createStore((currentState = {count: 1}, action) => {
+const store = createStore((currentState = {count: 0}, action) => {
     if (action.type === 'INCREMENT') {
         return {
-            count: currentState + 1
+            count: currentState.count + 1
         };
     }
 
@@ -208,10 +208,10 @@ const incrementCount = () => ({
     type: 'INCREMENT'
 });
 
-const store = createStore((currentState = {count: 1}, action) => {
+const store = createStore((currentState = {count: 0}, action) => {
     if (action.type === 'INCREMENT') {
         return {
-            count: currentState + 1
+            count: currentState.count + 1
         };
     }
 
@@ -235,10 +235,10 @@ How to watching the state changes use [`subscribe`](https://redux.js.org/api/sto
 ```
 import { createStore } from 'redux';
 
-const store = createStore((currentState = {count: 1}, action) => {
+const store = createStore((currentState = {count: 0}, action) => {
     if (action.type === 'INCREMENT') {
         return {
-            count: currentState + 1
+            count: currentState.count + 1
         };
     }
 
@@ -247,7 +247,7 @@ const store = createStore((currentState = {count: 1}, action) => {
 
 store.subscribe(() => {
     console.log(store.getState()); // called twice the 1st output {count: 1}, the 2nd {count: 2}
-};
+});
 
 // 1st trigger to run `subscribe`
 store.dispatch({
@@ -294,10 +294,10 @@ store.dispatch({
 ```
 import { createStore } from 'redux';
 
-const countReducer = () => (currentState = {count: 1}, action) => {
+const countReducer = () => (currentState = {count: 0}, action) => {
     if (action.type === 'INCREMENT') {
         return {
-            count: currentState + 1
+            count: currentState.count + 1
         };
     }
 
