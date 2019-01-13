@@ -37,7 +37,7 @@ yarn dev-server
 ![react router](https://raw.githubusercontent.com/harryosmar/the-complete-react-course-with-redux/master/expensify-app/src/images/react-client-router.jpg)
 
 Example :
-```
+```es6
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
@@ -70,7 +70,7 @@ ReactDOM.render(routes, document.getElementById('container'));
 - When accessing the `/create` url directly in the browser, will return `404` Not Found error response. Because in that path, the `index.html` is not available. `index.html` needed, because it's contained the bundled js files, where the React Router script is implemented.
 
 Solution : *in `DEV`*, need to set webpack config  [`devServer historyApiFallback`](https://webpack.js.org/configuration/dev-server/#devserver-historyapifallback) value to `true`. To enable load this `index.html` page.
-```
+```es6
 module.exports = {
     devServer: {
         historyApiFallback: true
@@ -80,7 +80,7 @@ module.exports = {
 
 ###  404 Page
 
-```
+```es6
 import {BrowserRouter, Route} from 'react-router-dom';
 const NotFound = () => (
     <div>
@@ -112,7 +112,7 @@ The props that will be delegated :
 - [location](https://reacttraining.com/react-router/web/api/location)
 - [history](https://reacttraining.com/react-router/web/api/history)
 
-```
+```es6
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
@@ -158,7 +158,7 @@ as [props](https://reactjs.org/docs/components-and-props.html) to the childs com
 #### createStore
 
 Creating the redux store using [`createStore`](https://redux.js.org/basics/store) function
-```
+```es6
 import { createStore } from 'redux';
 
 const store = createStore((currentState = {count: 0}) => {
@@ -174,7 +174,7 @@ How to update the state, using [`action`](https://redux.js.org/basics/actions)
 Action is an object. Where we can define the `type` of the action. Usually the type is a string with value all `UPPERCASE`.
 > When changing the state do not modify the `currentState` or [`action`](https://redux.js.org/basics/actions) parameter. It should be immutable.
 
-```
+```es6
 import { createStore } from 'redux';
 
 const store = createStore((currentState = {count: 0}, action) => {
@@ -201,7 +201,7 @@ console.log(store.getState()); // {count: 1}
 
 To avoid duplicate typing of action for each `dispatch`, move the `action` object to a generator function.
 
-```
+```es6
 import { createStore } from 'redux';
 
 const incrementCount = () => ({
@@ -232,7 +232,7 @@ console.log(store.getState()); // {count: 3}
 
 How to watching the state changes use [`subscribe`](https://redux.js.org/api/store#subscribe) listener
 
-```
+```es6
 import { createStore } from 'redux';
 
 const store = createStore((currentState = {count: 0}, action) => {
@@ -261,7 +261,7 @@ store.dispatch({
 ```
 
 How to `unsubscribe`
-```
+```es6
 
 // state : {count: 0}
 
@@ -291,7 +291,7 @@ store.dispatch({
 - [Reducer](https://redux.js.org/glossary#reducer) are pure function.
 - Never changes [`state`](https://redux.js.org/glossary#state) or [`action`](https://redux.js.org/glossary#action)
 
-```
+```es6
 import { createStore } from 'redux';
 
 const countReducer = () => (currentState = {count: 0}, action) => {
@@ -311,7 +311,7 @@ const store = createStore(countReducer);
 
 [`combinereducers`](https://redux.js.org/api/combinereducers) is used to split the [`reducer`](https://redux.js.org/glossary#reducer) into separate functions.
 
-```
+```es6
 import { createStore, combineReducers } from 'redux';
 
 const expensesReducerDefaultState = [];
@@ -352,7 +352,7 @@ console.log(store.getState()); // {expenses: Array(0), filters: {text: "", sortB
 
 This es6 [`destructuring`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) assignment syntax provide easy access to object, array.
 
-```
+```es6
 const book = {
     title: 'Ego is the enemy',
     author: 'Ryan Holiday',
@@ -386,7 +386,7 @@ adding(); // output 100
 
 [`Spread syntax`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
-```
+```es6
 function sum(x, y, z) {
   return x + y + z;
 }
@@ -410,7 +410,7 @@ console.log(sum.apply(null, numbers));
 }
 ```
 - example
-```
+```es6
 const user = {
     name: 'spongebob'
 };
@@ -425,7 +425,7 @@ console.log({ ...user, ...{'location': 'here'}});
 ```
 
 You can use spread object to define props in react component.
-```
+```es6
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -452,7 +452,7 @@ ReactDOM.render(<Info {...objectInfo}/>, document.getElementById('container'));
 - prop manipulation
 - abstraction state
 
-```
+```es6
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -502,7 +502,7 @@ The [`highers order component`](#higher-order-components) logic is used in [`rea
 
 Complete example of [`connect-ing`](https://react-redux.js.org/api/connect#connect) [React Component](https://github.com/harryosmar/the-complete-react-course-with-redux#react-component) to [`Redux store`](https://redux.js.org/api/store), with [combine reducer](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app#combinereducers).
 
-```
+```es6
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers } from 'redux';
@@ -575,7 +575,7 @@ We can access [`dispatch`](https://redux.js.org/api/store#dispatch) function fro
 example with control inputf for filter by keyword
 `<input type="text">`
 
-```
+```es6
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -611,14 +611,14 @@ const ConnectedExpenseListFilter = connect(mapStateToProps)(ExpenseListFilter);
 
 [event target property](https://www.w3schools.com/jsref/event_target.asp) return the element that triggered the event.
 
-```
+```es6
 alert(e.target);
 alert(e.target.value); // to get the element value
 ```
 
 If directly accessed from react `setState` parameter callback, it will throw an error. To able to do that we need to `persist` the event.
 
-```
+```es6
 import React from 'react';
 
 export default class ExpenseForm extends React.Component {
