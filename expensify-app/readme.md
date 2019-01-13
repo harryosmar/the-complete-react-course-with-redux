@@ -32,6 +32,7 @@ yarn dev-server
   * [Dispatch Action From React Component](#dispatch-action-from-react-component)
 * [Tips](#tips)
   * [Event Target Property Persist](#event-target-property-persist)
+* [Redux Dev Tools](#redux-dev-tools)
 * [Test using Jest](https://github.com/harryosmar/the-complete-react-course-with-redux/tree/master/expensify-app/test.md)
 
 ## React Router
@@ -652,6 +653,12 @@ export default class ExpenseForm extends React.Component {
     };
 }
 ```
+
+## Redux Dev Tools
+
+[Redux dev tools](https://github.com/zalmoxisus/redux-devtools-extension) is a browser extension.
+
+- 
 
 # links
 
