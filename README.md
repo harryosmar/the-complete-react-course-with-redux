@@ -46,7 +46,7 @@
 ### JSX Expression
 
 > `JSX expression` can only have 1 root element, the best pratice is to wrap all elements inside `<div>` tag
-```
+```es6
 let template = (
     <div>
         <h1>title<h1>
@@ -63,7 +63,7 @@ let template = (
 ### Conditional Rendering in JSX
 
 - Logical `AND` operator
-```
+```es6
 let age = 18;
 return true && "something"; // will return "something"
 
@@ -83,7 +83,7 @@ The difference between `var`, `const`, `let`
 | Re-define/Re-declare  | Y  | N  | N  |
 
 #### Re-define
-```
+```es6
 let letName = 'a';
 let letName = 'a1'; // error re-define `let`
 const constName = 'b';
@@ -93,7 +93,7 @@ var varName = 'c1';
 ```
 
 #### Re-assign
-```
+```es6
 let letName = 'a';
 letName = 'a1';
 const constName = 'b';
@@ -103,7 +103,7 @@ varName = 'c1';
 ```
 
 #### Function Scope
-```
+```es6
 function getName()
 {
     let letName = 'a';
@@ -120,7 +120,7 @@ console.log(constName); // error access, out of `function scope`
 
 `Block Scope` means the variable bound to `code block`, it can be `for` loop, or if statement with the curly bracket `{}`.
 
-```
+```es6
 if (true) {
     let letName = 'a';
     const constName = 'b';
@@ -139,7 +139,7 @@ Tips :
 ### Arrow Function es6
 
 #### Arrow function is `anonymous`
-```
+```es6
 // es5 example function with name `getFirstName` 
 function getFirstName(fullname) {
     return fullname.split(' ')[0];
@@ -162,7 +162,7 @@ const getFirstName = (fullname) => fullname.split(' ')[0];
 #### `arguments object` no longer bound with arrow functions
 
 In es5 we can access `arguments` object
-```
+```es6
 const greet = (name) => {
     console.log(arguments); // arguments object : arguments[0] 'patrik', arguments[1] 'spongebob'
     return `Hello ${name}`;
@@ -172,7 +172,7 @@ console.log(greet('patrik', 'spongebob')); // echo Hello patrik
 ```
 
 #### Can't access `arguments` object
-```
+```es6
 const greet = (name) => {
     console.log(arguments); // Uncaught ReferenceError: arguments is not defined
     return `Hello ${name}`;
@@ -181,7 +181,7 @@ const greet = (name) => {
 
 #### `this` keyword no longer bound
 > Lexical Scoping just means that it uses `this` from the code that *contains the Arrow Function*.
-```
+```es6
 const multiplier = {
     numbers: [1,2,3,4,5],
     multiplyBy: 3,
@@ -195,7 +195,7 @@ console.log(multiplier.multiply());
 ```
 
 Tips : in object `multiplier`, see that `multiply` function without `function` keyword. 
-```
+```es6
 const multiplier = {
     function : multiply() {}
 }
@@ -210,7 +210,7 @@ const multiplier = {
 ### Manual Binding
 > `JSX` does not have built in data binding.
 But React has [React Component State](#react-component-state) to handled this matter.
-```
+```es6
 let count = 0;
 
 const addOne = () => {
@@ -230,7 +230,7 @@ ReactDOM.render(template2, placeholder);
 ```
 
 How to make the count changed, by manual binding
-```
+```es6
 let count = 0;
 
 const addOne = () => {
@@ -255,7 +255,7 @@ renderCounterApp();
 ```
 
 ### Array in JSX
-```
+```es6
 const options = [];
 // use spread syntax to push new item to options array
 options = [...options, 'item1', 'item2'];
@@ -269,7 +269,7 @@ const optionsTemplate = (
 
 ### React Component
 > react component is a `es6 class` or [`stateless function component`](#stateless-function-component) that extends `React.Component` class, and define `render` method.
-```
+```es6
 class Header extends React.Component {
     render() {
         return (
@@ -292,7 +292,7 @@ class SubHeader extends React.Component {
 ```
 
 How to use that `Header` component
-```
+```es6
 ReactDOM.render(<Header />, document.getElementById('container-id')); // <div id="container-id"><div><h1>Header</h1><h2>Sub Header</h2></div></div>
 ```
 
@@ -301,7 +301,7 @@ We can pass data to react component class, using `props` attribute. `props` is a
 
 > `props` is immutable.
 
-```
+```es6
 // How to pass the data to `props` attribute
 class Header extends React.Component {
     render() {
@@ -329,7 +329,7 @@ ReactDOM.render(<Header />, document.getElementById('container-id'));
 ```
 > `key` keyword can not be used as the `prop` name. Because React used it as identifier for unique childs elements. To avoid this warning `Warning: Each child in an array or iterator should have a unique "key" prop.`
 
-```
+```es6
 class Options extends React.Component {
     render() {
         return (
@@ -355,7 +355,7 @@ class Option extends React.Component {
 ```
 
 > Because props can use `function` as a value, for nested React Component, *the child can communicate with the parent component function*, if that function pass as the prop attribute to the child component.
-```
+```es6
 class ParentComponent extends React.Component {
     parentFunction() {
         alert();
@@ -383,7 +383,7 @@ class ChildComponent extends React.Component {
 
 ##### Default Props
 React component can has `defaultProps`. It's usefull to set default value for `rendering` or `state`.
-```
+```es6
 class Counter extends React.Component {
     constructor(props) {
         super(props);
@@ -416,7 +416,7 @@ ReactDOM.render(<Counter count={10}/>, document.getElementById('#container'));
 ##### Example with simple object
 
 There is a case when we trying to access `this` but get error access of `undefined` or `null`. Because We trying to access `this` out of scope. That's why we need to manually `bind` the `this`.
-```
+```es6
 const Person = {
     name: 'Spongebob',
     getName: function() {
@@ -439,7 +439,7 @@ console.log(getNameWithBind()); // Patrick
 ##### Example with react component
 
 The same case happened for React Component class. When we try to access `this` from another function beside `render`.
-```
+```es6
 class Options extends React.Component {
     constructor(props) {
         super(props);
@@ -469,7 +469,7 @@ Code example : [sample counter with react component and state](https://github.co
 ##### setState syntax
 
 - pass `object` as parameter to `setState` function *AVOID THIS*
-```
+```es6
 class Counter extends React.Component {
     constructor(props) {
         super(props);
@@ -504,7 +504,7 @@ That's happened cause react run the `setState` in a-sync way. So in the 2nd call
 > Do not change `prevState`, it should be immutable, because it can affect the lyfe cycle method like `componentDidUpdate`. We want to use the actual `prevState`, not the `prevState` that we accidentally changed.
 
 - pass `function` as parameter to `setState` function *PREFERRED*
-```
+```es6
 class Counter extends React.Component {
     constructor(props) {
         super(props);
@@ -546,7 +546,7 @@ class Counter extends React.Component {
 #### Stateless Function Component
 Simple react component in form of function, but does not have any state/`stateless`. Usefull for react component which only needed to render, without has any logic related to `state`.
 But this stateless function still can have `props`.
-```
+```es6
 // sample with explicit return
 const User = (props) => {
     return (
@@ -562,7 +562,7 @@ ReactDOM.render(<User name="Spongebob" age={17}>, document.getElementById('conta
 ```
 
 Sample with implicit return JSX
-```
+```es6
 const User = (props) => (
     <div>
         <p>name: {props.name}</p>
@@ -573,7 +573,7 @@ const User = (props) => (
 
 #### Passing children to Component
 > use component built in `props.children`
-```
+```es6
 const Layout = (props) => {
     return (
         <div>
@@ -590,7 +590,7 @@ ReactDOM.render(<Layout><p>inline text</p></Layout>, document.getElementById('co
 
 ### Simplify returning an object
 
-```
+```es6
 const getUser = () => {
     return {
         'username': 'spongebob'
@@ -605,38 +605,38 @@ const getUser = () => ({'username': 'spongebob'});
 
 #### named export
 
-```
+```es6
 export const add = (num1, num2) => num1 + num2;
 export const multiply = (num1, num2) => num1 * num2;
 ```
 OR
-```
+```es6
 const add = (num1, num2) => num1 + num2;
 const multiply = (num1, num2) => num1 * num2;
 export {add, multiply};
 ```
 How to import that
-```
+```es6
 import {add, multiply} from './FILE/PATH.js';
 ```
 
 #### default export
 - we don't have to reference by `name`.
-```
+```es6
 const add = (num1, num2) => num1 + num2;
 const multiply = (num1, num2) => num1 * num2;
 const subtract = (num1, num2) => num1 - num2;
 export {add, multiply, subtract as default};
 ```
 OR
-```
+```es6
 export const add = (num1, num2) => num1 + num2;
 export const multiply = (num1, num2) => num1 * num2;
 const subtract = (num1, num2) => num1 - num2;
 export default subtract;
 ```
 import
-```
+```es6
 import defaultSubtract, {add, multiply} from './FILE/PATH.js';
 
 
