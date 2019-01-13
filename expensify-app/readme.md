@@ -658,7 +658,14 @@ export default class ExpenseForm extends React.Component {
 
 [Redux dev tools](https://github.com/zalmoxisus/redux-devtools-extension) is a browser extension.
 
-- 
+- [installation](https://github.com/zalmoxisus/redux-devtools-extension#installation)
+- Update the code `createStore`.
+```es6
+ const store = createStore(
+   reducer, /* preloadedState, */
++  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ );
+```
 
 # links
 
