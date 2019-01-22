@@ -52,7 +52,7 @@ test('adds 1 + 2 to equal 3', () => {
 
 ## Expect methods
 
-[`list of expect methos `](https://jestjs.io/docs/en/expect).
+See List of available : [expect methods](https://jestjs.io/docs/en/expect#methods).
 
 ### toBe
 
@@ -104,13 +104,6 @@ test('should assert the value of id is an integer', () => {
   expect({id}).toequal({id: expect.any(Number)});
 });
 ```
-
-```
-expect(ac)
-```
-
-
-See List of available : [expect methods](https://jestjs.io/docs/en/expect#methods)
 
 ## Links
 
