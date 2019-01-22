@@ -87,7 +87,7 @@ expect({a:1}).toEqual({a:1}); // pass the assertion test
 
 ### any
 
-expect.[any](#https://jestjs.io/docs/en/expect#expectanyconstructor), used to assert the type, without any concern about the value. 
+expect.[any](https://jestjs.io/docs/en/expect#expectanyconstructor), used to assert the type, without any concern about the value. 
 
 This is usefull for the test case, assertion for `id` which is random generated. Because the value of `id` is random, in test side, we don't care about the value, we just need to expect the type of `id` is an `Number`.
 
