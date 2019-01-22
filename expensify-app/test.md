@@ -2,8 +2,10 @@
 
 * [Installation](#installation)
 * [Examples with throw error](#examples-with-throw-error)
-* [Examples with expect method](#examples-with-expect-method)
-
+* [expect methods](#expect-methods)
+   * [toBe](#tobe)
+   * [toEqual](#toequal)
+   * [any](#any)
 * [Links](#links)
 
 ## Installation
@@ -48,7 +50,13 @@ test('adds 1 + 2 to equal 3', () => {
 });
 ```
 
-## Examples with expect method
+## Expect methods
+
+[`list of expect methos `](https://jestjs.io/docs/en/expect).
+
+### toBe
+
+[toBe](https://jestjs.io/docs/en/expect#tobevalue) is a strict comparison, equal to `===`.
 
 ```es6
 const sum = (a, b) => a + b;
@@ -58,22 +66,49 @@ test('adds 1 + 2 to equal 3', () => {
 });
 ```
 
-Test script above using [`toBe`](https://jestjs.io/docs/en/expect#tobevalue) [`expect`](https://jestjs.io/docs/en/expect) method.
-
-To be will compare variables using strict comparison `===`.
-
 ```es6
-[] === []; // false
-{} === {}; // false
 1 === 1; // true
 false === false; // true
 ```
+### toEqual
 
-For object or array comparison, instead of checking the object or array index-value one by one. We can use [`toEqual`](https://jestjs.io/docs/en/expect#toequalvalue) method.
+Because of [toBe](#tobe) is a strict comparison, so is doesn't worked for `array` or `object` comparison.
+```
+[] === []; // false
+{} === {}; // false
+```
+
+For `object` or `array` comparison, instead of checking the object or array index-value one by one.
+We can use [`toEqual`](https://jestjs.io/docs/en/expect#toequalvalue) method.
 
 ```es6
 expect({a:1}).toEqual({a:1}); // pass the assertion test
 ```
+
+### any
+
+expect.[any](#https://jestjs.io/docs/en/expect#expectanyconstructor), used to assert the type, without any concern about the value. 
+
+This is usefull for the test case, assertion for `id` which is random generated. Because the value of `id` is random, in test side, we don't care about the value, we just need to expect the type of `id` is an `Number`.
+
+This expect `any` method, can be used inside [`toEqual`](#toequal) or `toBeCalledWith`.
+
+```
+const generateId = () => {
+  return Math.floor(Math.random() * 6 + 1);
+};
+
+const id = generateId();
+
+test('should assert the value of id is an integer', () => {
+  expect({id}).toequal({id: expect.any(Number)});
+});
+```
+
+```
+expect(ac)
+```
+
 
 See List of available : [expect methods](https://jestjs.io/docs/en/expect#methods)
 
