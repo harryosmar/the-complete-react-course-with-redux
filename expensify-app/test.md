@@ -116,10 +116,6 @@ expect().[`toMatchSnapshot`](https://jestjs.io/docs/en/expect#tomatchsnapshotpro
 
 example see [ReactShallowRenderer](#reactshallowrenderer).
 
-```
-
-```
-
 ## Testing React Component
 
 When testing a `react component`, we have some concerns :
@@ -177,7 +173,7 @@ What `console.log(renderOutput);` output look like :
 
 We will match this `renderOutput` to snapshot. Using jest expect method [`toMatchSnapshot`](#tomatchsnapshot). `toMatchSnapshot` will create a snapshot file of how `Header` render ouput look like.
 
-[`Header Snapshot`](https://github.com/harryosmar/the-complete-react-course-with-redux/blob/master/expensify-app/src/test/components/__snapshots__/Header.test.js.snap)
+See the [`Header Snapshot`](https://github.com/harryosmar/the-complete-react-course-with-redux/blob/master/expensify-app/src/test/components/__snapshots__/Header.test.js.snap) look like.
 
 Note :
 1. When we first running the test, it will create the snapshot, this will make the test always pass at the first time.
