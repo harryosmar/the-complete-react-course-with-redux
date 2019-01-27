@@ -2,6 +2,11 @@ import moment from 'moment';
 import expensesReducer from '../../reducers/expenses.js';
 import { addExpense, editExpense, removeExpense } from '../../actions/expenses.js';
 
+test('should set empty array as default state value', () => {
+    expect(expensesReducer(undefined, { TYPE: '@@INIT' }))
+    .toEqual([]);
+});
+
 const addExpenseAction = addExpense({
     description: "Water Bill",
     note: "",
@@ -10,7 +15,7 @@ const addExpenseAction = addExpense({
 });
 
 test('call addExpense', () => {
-    expect(expensesReducer([], addExpenseAction))
+    expect(expensesReducer(undefined, addExpenseAction))
     .toEqual(
         [
             {
@@ -58,7 +63,7 @@ test('call editExpense', () => {
 
 const removeExpenseAction = removeExpense({ id: 1 });
 
-test('call removeExpense', () => {
+test('should remove expense by id', () => {
     expect(expensesReducer(
         [
             {
@@ -72,4 +77,22 @@ test('call removeExpense', () => {
         removeExpenseAction
     ))
     .toEqual([]);
+});
+
+const expenses = [
+    {
+        id: 2,
+        description: "Water Bill",
+        note: "",
+        amount: 1000,
+        createdDate: moment(0).valueOf()
+    }
+];
+
+test('should not remove expense by id if not found', () => {
+    expect(expensesReducer(
+        expenses,
+        removeExpenseAction
+    ))
+    .toEqual(expenses);
 });
