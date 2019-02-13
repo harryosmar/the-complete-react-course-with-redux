@@ -94,6 +94,10 @@ var varName = 'c1';
 ```
 
 #### Re-assign
+
+> Re-assign is difference with `change` the value. Re-assign means change the a new whole value, assign it a new value.
+
+
 ```es6
 let letName = 'a';
 letName = 'a1';
@@ -103,7 +107,7 @@ var varName = 'c';
 varName = 'c1';
 const sampleObject = {y:2};
 const sampleObject.y = 3; // {y:3}
-sampleObject = {}; // error re-assign
+sampleObject = {}; // error re-assign change a new whole value
 ```
 
 #### Function Scope
