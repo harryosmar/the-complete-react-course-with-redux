@@ -101,6 +101,9 @@ const constName = 'b';
 constName = 'b1'; // error re-assign `const`
 var varName = 'c';
 varName = 'c1';
+const sampleObject = {y:2};
+sampleObject.y = 3; // {y:3}
+sampleObject = {}; // error re-assign
 ```
 
 #### Function Scope
