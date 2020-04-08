@@ -154,7 +154,7 @@ function getFirstName(fullname) {
 }
 
 // still es5 example function `anonymous`, instead we stored this function to variable `getFirstName`
-var getFirstName = function getFirstName(fullname) {
+var getFirstName = function (fullname) {
     return fullname.split(' ')[0];
 }
 
