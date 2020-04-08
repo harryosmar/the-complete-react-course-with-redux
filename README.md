@@ -276,7 +276,7 @@ const optionsTemplate = (
 ```
 
 ### React Component
-> react component is a `es6 class` or [`stateless function component`](#stateless-function-component) that extends `React.Component` class, and define `render` method.
+> react component is (a `es6 class` that extends `React.Component` class, and define `render` method) OR ([`stateless function component`](#stateless-function-component))
 ```es6
 class Header extends React.Component {
     render() {
