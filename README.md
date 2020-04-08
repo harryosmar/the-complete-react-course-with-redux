@@ -170,7 +170,7 @@ const getFirstName = (fullname) => fullname.split(' ')[0];
 #### `arguments object` no longer bound with arrow functions
 
 In es5 we can access `arguments` object
-```es5
+```js
 function greet(name) {
     console.log(arguments); // arguments object : arguments[0] 'patrik', arguments[1] 'spongebob'
     return `Hello ${name}`;
