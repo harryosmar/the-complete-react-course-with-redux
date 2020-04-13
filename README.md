@@ -217,7 +217,9 @@ const multiplier = {
 
 ### Manual Binding
 > `JSX` does not have built in data binding.
-But React has [React Component State](#react-component-state) to handled this matter.
+But React has [React Component](https://github.com/harryosmar/the-complete-react-course-with-redux#react-component) [State](#react-component-state) to handled this matter. When the [state](#react-component-state) changed then the [React Component](#react-component) will recall the `render` method. So it will re-render the JSX .
+
+
 ```es6
 let count = 0;
 
