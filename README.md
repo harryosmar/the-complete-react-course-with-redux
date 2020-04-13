@@ -229,6 +229,7 @@ const addOne = () => {
 };
 
 // when  button clicked count in `h1` element does not changed
+// this example does not used react component, only JSX
 const template2 = (
     <div>
         <h1>Count:{count}</h1>
