@@ -262,6 +262,8 @@ const renderCounterApp = () => {
 }
 
 // first render count equal to `0`
+// because we don't used react component with state, every change in JSX need to be refrected by : recall `ReactDOM.render`. 
+// With react component using state, this re-render feature is automatically handled
 renderCounterApp();
 ```
 
