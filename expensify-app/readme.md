@@ -175,6 +175,7 @@ console.log(store.getState()); // {count: 0}
 
 How to update the state, using [`action`](https://redux.js.org/basics/actions)
 Action is an object. Where we can define the `type` of the action. Usually the type is a string with value all `UPPERCASE`.
+> Dispatch `action` to update store state
 > When changing the state do not modify the `currentState` or [`action`](https://redux.js.org/basics/actions) parameter. It should be immutable.
 
 ```es6
