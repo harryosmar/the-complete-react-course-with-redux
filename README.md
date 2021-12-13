@@ -95,7 +95,7 @@ var varName = 'c1';
 
 #### Re-assign
 
-> Re-assign is difference with `change` the value. Re-assign means change the a new whole value, assign it a new value.
+> Re-assign is difference with `change` the value. Re-assign means the change to a *new whole value*.
 
 
 ```es6
