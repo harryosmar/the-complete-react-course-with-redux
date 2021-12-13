@@ -101,12 +101,16 @@ var varName = 'c1';
 ```es6
 let letName = 'a';
 letName = 'a1';
+
 const constName = 'b';
 constName = 'b1'; // error re-assign `const`
+
 var varName = 'c';
 varName = 'c1';
+
 const sampleObject = {y:2};
-const sampleObject.y = 3; // {y:3}
+const sampleObject.y = 3; // this is working, {y:3}
+
 sampleObject = {}; // error re-assign change a new whole value
 ```
 
